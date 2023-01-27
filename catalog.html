@@ -53,8 +53,8 @@
         </ul>
       </header>
 
-      <section class="catalog-hootels">
-        <h2 class="visually-hidden">Список гостиниц с фильтрами.</h2>
+      <section class="catalog-filter-hotels">
+        <h2 class="visually-hidden">Фильтры для поиска гостиниц.</h2>
         <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
           <fieldset class="catalog-filter-group">
             <legend class="catalog-filter-title">Инфраструктура:</legend>
@@ -111,24 +111,31 @@
             <button class="button button-reset" type="reset">Сбросить</button>
           </div>
         </form>
+      </section>
 
-        <div class="catalog-search">
-          <span class="catalog-found">Найдено гостиниц: 38</span>
-          <select class="select-control" aria-label="Сортировка">
-            <option value="cheap">Сначала дешевые</option>
-          </select>
-          <div class="button button-view">
+      <section class="catalog-result-search">
+        <h2 class="visually-hidden">Результаты поиска гостиниц.</h2>
+        <span class="catalog-found">Найдено гостиниц: 38</span>
+        <select class="select-control" aria-label="Сортировка">
+          <option value="cheap">Сначала дешевые</option>
+        </select>
+        <ul class="buttons-view">
+          <li>
             <a class="button button-tile" href="#">
               <span class="visually-hidden">Показать плитку.</span>
             </a>
+          </li>
+          <li>
             <a class="button button-slaid" href="#">
               <span class="visually-hidden">Показать слайд-шоу.</span>
             </a>
+          </li>
+          <li>
             <a class="button button-list" href="#">
               <span class="visually-hidden">Показать список.</span>
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
         <ul class="catalog-hotels" data-test="catalog">
           <li class="catalog-hotel">
             <a class="hotel-link" href="#">
@@ -199,8 +206,7 @@
             <span class="hotel-raiting">РЕЙТИНГ: 5,0</span>
           </li>
         </ul>
-
-        <ul class="pagination">
+        <ol class="pagination">
           <li class="pagination-item">
             <a class="pagination-link pagination-current">1</a>
           </li>
@@ -219,7 +225,7 @@
           <li class="pagination-item">
             <a class="pagination-link" href="#">10</a>
           </li>
-        </ul>
+        </ol>
       </section>
       <section class="subscribe subscribe-catalog" data-test="subscribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
