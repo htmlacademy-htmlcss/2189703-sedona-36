@@ -74,7 +74,6 @@ body {
 }
 
 .navigation-link {
-  color: #000000;
   text-decoration: none;
 }
 
@@ -130,4 +129,11 @@ body {
 
 .button-subscribe {
   background-color: #82B3D3;
+}
+
+.tel {
+  font-size: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #000000;
 }
