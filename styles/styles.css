@@ -23,6 +23,26 @@ body {
   color: #25e080;
 }
 
+.button {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #756157;
+}
+
+.button-big {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #756157;
+}
+
 .big-text {
   font-weight: 700;
   font-size: 30px;
@@ -106,4 +126,8 @@ body {
   background-image: url(../images/subscribe-background.jpg);
   background-size: 100% auto;
   color: #ffffff;
+}
+
+.button-subscribe {
+  background-color: #82B3D3;
 }
