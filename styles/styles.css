@@ -20,13 +20,14 @@ body {
   line-height: 21px;
   text-align: center;
   background-color: #ffffff;
-  color: #25e080;
+  color: #000000;
 }
 
 .button {
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
@@ -37,6 +38,7 @@ body {
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
@@ -47,20 +49,17 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
-  color: red;
 }
 
 .medium-text {
   font-size: 22px;
   line-height: 26px;
-  color: rgb(178, 159, 21);
 }
 
 .subtitle {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #3F5E72;
 }
 
 .visually-hidden {
@@ -74,7 +73,12 @@ body {
 }
 
 .navigation-link {
+  color: #000000;
   text-decoration: none;
+}
+
+.navigation-link.button {
+  color: #ffffff;
 }
 
 .navigation-user {
@@ -135,5 +139,111 @@ body {
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
+  color: #000000;
+}
+
+.main-inner{
+text-align: left;
+}
+
+.inner-header-title {
+  font-size: 60px;
+  line-height: 78px;
+  font-weight: 700;
+}
+
+.breadcrumbs-link {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.catalog-filter-group {
+  border: none;
+}
+
+.catalog-filter-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.catalog-filter-list {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.button-apply {
+  background-color: #82B3D3;
+  border: none;
+}
+
+.button-reset {
+  background-color: transparent;
+  border: none;
+}
+
+.wrapper {
+  background-color: #3F5E72;
+  background-image: url(../images/filter-background.jpg);
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+.select-control {
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.hotel-link {
+  text-decoration: none ;
+}
+
+.hotel-choose {
+  border: none;
+  background-color: #82B3D3;
+}
+
+.choose {
+  background-color: #7DB54F;
+}
+
+.hotel-raiting {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.hotel-four-star {
+  background-image: url(../images/star.svg);
+  background-repeat: repeat-x;
+  width: 96px;
+  height: 40px;
+}
+
+.hotel-three-star {
+  background-image: url(../images/star.svg);
+  background-repeat: repeat-x;
+  width: 72px;
+  height: 40px;
+}
+
+.hotel-two-star {
+  background-image: url(../images/star.svg);
+  background-repeat: repeat-x;
+  width: 48px;
+  height: 40px;
+}
+
+.subscribe-catalog {
+  text-align: center;
+}
+
+.pagination-link {
+background-color: #82B3D3;
+color: #ffffff;
+}
+
+.pagination-current,
+.dots {
+  background: none;
   color: #000000;
 }
