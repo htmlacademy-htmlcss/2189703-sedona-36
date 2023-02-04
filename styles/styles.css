@@ -135,6 +135,7 @@ body {
 
 .button-subscribe {
   background-color: #82B3D3;
+  border: none;
 }
 
 .tel {
@@ -144,7 +145,7 @@ body {
   color: #000000;
 }
 
-.main-inner{
+.main-inner {
 text-align: left;
 }
 
@@ -233,6 +234,10 @@ text-align: left;
   background-repeat: repeat-x;
   width: 48px;
   height: 40px;
+}
+
+.hotel-raiting {
+  text-transform: uppercase;
 }
 
 .subscribe-catalog {
