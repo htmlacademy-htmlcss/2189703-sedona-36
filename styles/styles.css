@@ -37,12 +37,6 @@ body {
 .button-big {
   font-size: 20px;
   line-height: 36px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #756157;
 }
 
 .big-text {
