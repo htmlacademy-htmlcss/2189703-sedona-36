@@ -18,8 +18,7 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
-  background-color: #ffffff;
+  background-color: #F2F2F2;
   color: #000000;
 }
 
@@ -57,7 +56,16 @@ body {
 }
 /* Пока не подключаю это правило, чтобы было видно, где будут декоративные элементы.
 .visually-hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 */
 
