@@ -55,6 +55,7 @@ body {
   font-weight: 700;
   font-size: 30px;
   line-height: 36px;
+  text-transform: uppercase;
 }
 
 .medium-text {
@@ -66,6 +67,7 @@ body {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  text-transform: uppercase;
 }
 /* Пока не подключаю это правило, чтобы было видно, где будут декоративные элементы.
 .visually-hidden {
@@ -163,7 +165,7 @@ body {
 
 .description-item {
   width: 400px;
-
+  color: #ffffff;
   background-color: #82B3D3;
 /* Пока непонятно в этом месте с типом блоков контур оставлю видимым на странице браузера */
   outline: 5px solid rgb(134, 245, 87);
@@ -176,10 +178,12 @@ body {
 
 .description-square,
 .description-tourists {
+  color: #000000;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
 .description-road {
+  color: #000000;
   background-color: rgba(131, 179, 211, 0.2);
 }
 
@@ -353,6 +357,7 @@ border: none;
 .catalog-found {
   display: block;
   width: 338px;
+  text-transform: uppercase;
 
    outline: 5px solid rgb(134, 245, 87);
   outline-offset: -5px;
@@ -380,6 +385,11 @@ border: none;
 
 .hotel-link {
   text-decoration: none ;
+}
+
+.hotel-title {
+  text-transform: none;
+  color: #000000;
 }
 
 .catalog-hotels {
