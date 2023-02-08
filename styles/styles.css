@@ -14,12 +14,25 @@
     font-display: swap;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   background-color: #F2F2F2;
   color: #000000;
+}
+
+.main-container {
+  flex-grow: 1;
 }
 
 .button {
@@ -71,24 +84,54 @@ body {
 
 
 .page-header {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
 }
 
-.navigation-link {
-  color: #000000;
-  text-decoration: none;
+.navigation {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
 }
 
-.navigation-link.button {
-  color: #ffffff;
+.logo {
+  width: 138px;
+  margin-right: 30px;
+}
+
+.navigation-list {
+  width: 400px;
+  margin: 0;
+
+  padding: 0;
 }
 
 .navigation-user {
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.navigation-link {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.navigation-link.button {
   font-size: 16px;
   line-height: 20px;
+  color: #ffffff;
 }
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 
 .selected-quantity {
   background-color: #7DB54F;
@@ -101,31 +144,66 @@ body {
   background-color: #3F5E72;
   background-image: url(../images/hero-background.jpg);
   background-size: 100% auto;
-  height: 485px;
 }
 
-.hero-images {
+
+.description {
+  background-color: #ffffff;
+}
+
+
+.description-list {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
-  margin-top: 51px;
+  padding: 0;
 }
 
-.description-list li:first-child,
-.description-list  li:last-child {
+
+
+.description-item {
+  width: 400px;
+
   background-color: #82B3D3;
+/* Пока непонятно в этом месте с типом блоков контур оставлю видимым на странице браузера */
+  outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+/* Временный отступ, пока не прописаны микросетки */
+.description-town {
+  margin-right: 800px;
 }
 
-.description-list li:nth-child(2),
-.description-list li:nth-child(4) {
-  background-color: #83B3D31F;
+.description-square,
+.description-tourists {
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
-.description-list li:nth-child(3) {
-  background-color: #83B3D333;
+.description-road {
+  background-color: rgba(131, 179, 211, 0.2);
 }
 
-.advantages-list li:first-child,
-.advantages-list  li:last-child {
-  background-color: #83B3D31F;
+.features {
+  background-color: #ffffff;
+}
+
+.features-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.features-item {
+  width: 400px;
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.features-food {
+  background-color: #ffffff;
+}
+
+.search {
+  background-color: #ffffff;
 }
 
 .subscribe {
@@ -140,15 +218,42 @@ body {
   border: none;
 }
 
+.page-footer {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.page-footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.footer-social {
+  width: 200px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
 .tel {
+  width: 142px;
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
   color: #000000;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
 }
 
-.main-inner {
-text-align: left;
+.footer-logo-academy {
+  width: 115px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
 }
 
 .inner-header-title {
@@ -162,8 +267,23 @@ text-align: left;
   line-height: 21px;
 }
 
-.catalog-filter-group {
-  border: none;
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+}
+
+.inner-header-title,
+.breadcrumbs,
+.catalog-filter,
+.catalog-result-search {
+  width: 1060px;
+  margin: 0 auto;
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
+.catalog-filter {
+  display: flex;
 }
 
 .catalog-filter-title {
@@ -177,6 +297,32 @@ text-align: left;
   line-height: 23px;
 }
 
+.catalog-filter-group {
+width: 150px;
+margin: 0;
+padding: 0;
+margin-right: 70px;
+border: none;
+
+ outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
+.catalog-filter-cost {
+  width: 288px;
+  margin-left: auto;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
+.catalog-filter-buttons {
+  width: 191px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
 .button-apply {
   background-color: #82B3D3;
   border: none;
@@ -188,19 +334,68 @@ text-align: left;
 }
 
 .wrapper {
+  text-align: left;
   background-color: #3F5E72;
   background-image: url(../images/filter-background.jpg);
   background-repeat: no-repeat;
   color: #ffffff;
 }
 
+.catalog-result-search {
+  width: 1200px;
+  background-color: #ffffff;
+}
+
+.catalog-result-search-view {
+  display: flex;
+}
+
+.catalog-found {
+  display: block;
+  width: 338px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
 .select-control {
+  width: 292px;
+  margin-left: auto;
   font-size: 18px;
   line-height: 21px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
+.buttons-view {
+  width: 160px;
+  margin: 0;
+  padding: 0;
+  margin-left: 70px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
 }
 
 .hotel-link {
   text-decoration: none ;
+}
+
+.catalog-hotels {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1060px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.catalog-hotel {
+  width: 340px;
+
+   outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
 }
 
 .hotel-choose {
@@ -242,8 +437,20 @@ text-align: left;
   text-transform: uppercase;
 }
 
-.subscribe-catalog {
-  text-align: center;
+.pagination {
+  display: flex;
+  width: 1060px;
+  margin: 0 auto;
+  padding: 0;
+
+  outline: 5px solid rgb(134, 245, 87);
+  outline-offset: -5px;
+}
+
+.pagination-item {
+  width: 60px;
+  margin-right: 8px;
+  list-style: none;
 }
 
 .pagination-link {
@@ -255,4 +462,8 @@ color: #ffffff;
 .dots {
   background: none;
   color: #000000;
+}
+
+.subscribe-catalog {
+  background-color: #ffffff;
 }
