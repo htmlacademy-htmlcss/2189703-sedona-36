@@ -335,7 +335,6 @@ body {
   justify-content: space-between;
   width: 1060px;
   margin: 0 auto;
-  padding: 40px 0 30px;
 }
 
 .footer-social {
@@ -350,26 +349,30 @@ body {
   list-style-type: none;
 }
 
-.button-social {
+.social-link {
   display: block;
-  width: 47px;
-  height: 40px;
+  box-sizing: border-box;
+  padding: 50px 12px;
+  height: 120px;
 }
 
-.button-social svg {
-  padding-top: 12px;
-}
 
 .tel {
-  width: 142px;
+  display: block;
+  width: 335px;
+  padding: 40px;
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
   color: #000000;
 }
 
-.footer-logo-academy {
+.logo-academy {
+  display: block;
   width: 115px;
+  height: 34px;
+  padding: 38px 0;
+  margin-top: 10px;
 }
 
 /* Сраница каталога */
