@@ -146,7 +146,10 @@ body {
 }
 
 .navigation-user {
-  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 270px;
   margin-left: auto;
   }
 
@@ -157,8 +160,9 @@ body {
 }
 
 .navigation-link.button {
-  padding: 4px 34px;
-  margin-top: 18px;
+  min-width: 160px;
+  padding: 8px 32px;
+  margin: 14px 0;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -376,39 +380,53 @@ body {
 }
 
 /* Сраница каталога */
+/* Обертка заголовка, хлебных крошек и фильтра для общего фона */
+
+.wrapper {
+  text-align: left;
+  background-color: #3F5E72;
+  background-image: url(../images/filter-background.jpg);
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+
+.header-inner,
+.catalog-filter-hotels {
+  padding: 0 70px;
+}
+
+
+/* Шапка для страницы каталога */
 
 .inner-header-title {
+  display: block;
+  margin: 0;
+  padding-top: 35px;
   font-size: 60px;
   line-height: 78px;
   font-weight: 700;
 }
 
+.breadcrumbs-list {
+  display: flex;
+  margin: 0;
+  margin-bottom: 40px;
+  padding: 0;
+  padding-top: 8px;
+  list-style-type: none;
+}
+
 .breadcrumbs-link {
+  padding: 0 10px;
   font-size: 16px;
   line-height: 21px;
-}
-
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-}
-
-/* Ширина контнента на странице */
-
-.inner-header-title,
-.breadcrumbs,
-.catalog-filter,
-.catalog-result-search {
-  width: 1060px;
-  margin: 0 auto;
-   outline: 5px solid rgb(134, 245, 87);
-  outline-offset: -5px;
 }
 
 /* Секция фильтрации гостиниц */
 
 .catalog-filter {
   display: flex;
+  padding-bottom: 70px;
 }
 
 .catalog-filter-title {
@@ -424,27 +442,36 @@ body {
 
 .catalog-filter-group {
 width: 150px;
-margin: 0;
-padding: 0;
 margin-right: 70px;
 border: none;
 
- outline: 5px solid rgb(134, 245, 87);
+ outline: 5px solid rgb(240, 49, 11);
   outline-offset: -5px;
+}
+
+.catalog-filter-title {
+  margin-bottom: 32px;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .catalog-filter-cost {
   width: 288px;
   margin-left: auto;
 
-   outline: 5px solid rgb(134, 245, 87);
+   outline: 5px solid rgb(69, 73, 10);
   outline-offset: -5px;
 }
 
 .catalog-filter-buttons {
+  align-self: flex-end;
   width: 191px;
 
-   outline: 5px solid rgb(134, 245, 87);
+   outline: 5px solid rgb(106, 39, 206);
   outline-offset: -5px;
 }
 
@@ -458,35 +485,25 @@ border: none;
   border: none;
 }
 
-/* Обертка заголовка, хлебных крошек и фильтра для общего фона */
-
-.wrapper {
-  text-align: left;
-  background-color: #3F5E72;
-  background-image: url(../images/filter-background.jpg);
-  background-repeat: no-repeat;
-  color: #ffffff;
-}
-
 /* Секция результатов фильтра */
-
-.catalog-result-search {
-  width: 1200px;
-  background-color: #ffffff;
-}
 
 .catalog-result-search-view {
   display: flex;
+  justify-content: space-between;
+  padding: 50px 70px 40px;
 }
 
 .catalog-found {
   display: block;
+  align-self: center;
   width: 338px;
+  margin: 0;
   text-transform: uppercase;
 
    outline: 5px solid rgb(134, 245, 87);
   outline-offset: -5px;
 }
+
 
 .select-control {
   width: 292px;
@@ -499,23 +516,31 @@ border: none;
 }
 
 .buttons-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 160px;
   margin: 0;
   padding: 0;
   margin-left: 70px;
+  list-style-type: none;
 
    outline: 5px solid rgb(134, 245, 87);
   outline-offset: -5px;
 }
 
-.hotel-link {
-  text-decoration: none ;
+.button-view {
+  display: block;
+  min-width: 16px;
+  min-height: 14px;
+  padding: 17px 16px;
+
+  outline: 5px solid rgb(21, 4, 78);
+  outline-offset: -5px;
+
 }
 
-.hotel-title {
-  text-transform: none;
-  color: #000000;
-}
+/* Список отфильтрованных отелей */
 
 .catalog-hotels {
   display: flex;
@@ -524,14 +549,31 @@ border: none;
   width: 1060px;
   margin: 0 auto;
   padding: 0;
+  list-style-type: none;
 }
 
 .catalog-hotel {
-  width: 340px;
+  width: 300px;
+  padding: 20px;
 
    outline: 5px solid rgb(134, 245, 87);
   outline-offset: -5px;
 }
+
+
+.hotel-link {
+  text-decoration: none ;
+}
+
+.hotel-title {
+  display: inline-block;
+  margin: 0;
+  padding: 16px 0;
+  text-transform: none;
+  color: #000000;
+}
+
+
 
 .hotel-choose {
   border: none;
