@@ -21,7 +21,7 @@
               <a class="navigation-link" href="#">О Cедоне</a>
             </li>
             <li class="navigaton-item">
-              <a class="navigation-link" href="catalog.html">Гостиницы</a>
+              <a class="navigation-link">Гостиницы</a>
             </li>
           </ul>
 
@@ -149,13 +149,14 @@
             </ul>
           </div>
           <ul class="catalog-hotels" data-test="catalog">
+            <!-- Поменяла строчные блоки на абзац пока на одной карточке. Посмотрю как ляжет на грид -->
             <li class="catalog-hotel">
               <a class="hotel-link" href="#">
                 <img class="hotel-img" src="images/hotels/hotel-1.jpg" width="300" height="212" alt="Фотография звездного неба в проходе между двух скал.">
                 <h3 class="hotel-title subtitle">Amara Resort & Spa</h3>
               </a>
-              <span class="hotel-class">Гостиница</span>
-              <span class="hotel-price">От 4000 ₽</span>
+              <p class="hotel-class">Гостиница</p>
+              <p class="hotel-price">От 4000 ₽</p>
               <a class="button" href="#">Подробнее</a>
               <button class="hotel-choose button" type="button">В избранное</button>
               <p class="hotel-four-star"><span class="visually-hidden">Четыре звезды.</span></p>
@@ -203,32 +204,40 @@
           </ul>
           <ol class="pagination-list">
             <li class="pagination-item">
-              <a class="pagination-link pagination-current button button-big">1</a>
+              <a class="pagination-link pagination-current">1</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button button-big" href="#">2</a>
+              <a class="pagination-link " href="#">2</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button button-big" href="#">3</a>
+              <a class="pagination-link" href="#">3</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button button-big" href="#">4</a>
+              <a class="pagination-link " href="#">4</a>
             </li>
             <li class="pagination-item">
-              <span class="button-big dots">...</span>
+              <span class=" dots">...</span>
             </li>
             <li class="pagination-item">
-              <a class="pagination-link button button-big" href="#">10</a>
+              <a class="pagination-link" href="#">10</a>
             </li>
           </ol>
         </section>
+
         <section class="subscribe-catalog" data-test="subscribe">
-          <h2 class="subscribe-title heading">Подпишитесь на рассылку</h2>
-          <p class="subscribe-text headline">Только полезная информация и никакого спама, честное бойскаутское</p>
+          <!-- После рестроспективы добавила обертку к тексту -->
+          <div class="subscribe-wrapper">
+
+            <h2 class="subscribe-title heading">Подпишитесь на рассылку</h2>
+            <p class="subscribe-text headline">Только полезная информация и никакого спама,<br> честное бойскаутское</p>
+
+          </div>
+
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input type="email" name="email" placeholder="Ваш e-mail">
+            <input class="email" type="email" name="email" placeholder="Ваш e-mail">
             <button class="button button-big button-subscribe" type="submit">подписаться</button>
           </form>
+
         </section>
       </main>
 
