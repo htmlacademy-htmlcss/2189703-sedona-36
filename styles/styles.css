@@ -656,8 +656,8 @@ border: none;
 }
 
 .pagination-item {
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   margin-right: 8px;
 }
 
@@ -666,11 +666,12 @@ border: none;
   display: block;
   min-width: 23px;
   min-height: 36px;
-  padding: 15px 18px;
+  padding: 15px 0;
   box-sizing: border-box;
-
   font-size: 20px;
+  font-weight: 700;
   line-height: 30px;
+  text-align: center;
   text-decoration: none;
   background-color: #82B3D3;
   color: #ffffff;
