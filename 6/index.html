@@ -51,10 +51,16 @@
           <img class="hero-images" src="images/welcome.svg" width="458" height="352" alt="Добро пожаловать в великолепную Седону, 'потому что Великий Каньон - отстой!'">
         </section>
         <article class="description" data-test="advantages">
-          <h2 class="visually-hidden">В чём привлекательность Седоны.</h2>
-          <p class="description-text heading">Седона — небольшой городок в Аризоне,
+          <!-- После рестроспективы добавила обертку к тексту -->
+          <div class="description-wrapper">
+            <h2 class="visually-hidden">В чём привлекательность Седоны.</h2>
+            <p class="description-text heading">Седона — небольшой городок в Аризоне,
             заслуживающий большего!</p>
-          <p class="description-text headline">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
+            <p class="description-text headline">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
+          </div>
+
+          <!-- Вариант раскладки списка от Дмитрия Халимова после лайва-->
+
           <ol class="description-list">
             <li class="description-item description-town">
               <div class="item-text">
@@ -64,46 +70,46 @@
 
               <img class="photo-town" src="images/photo-town.jpg" width="800" height="384" alt="Фотография городка.">
             </li>
-            <li>
-              <ul class="item-no-images">
 
-                <li class="description-item description-square">
-                  <div class="item-text">
-                    <h3 class="description-title subtitle">Небольшая площадь</h3>
-                    <p class="description-text">Все достопримечательности находятся очень близко</p>
-                  </div>
-                </li>
-
-                <li class="description-item description-road ">
-                  <div class="item-text">
-                    <h3 class="description-title subtitle">Красивая дорога</h3>
-                    <p class="description-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-                  </div>
-                </li>
-
-                <li class="description-item description-tourists">
-                  <div class="item-text">
-                    <h3 class="description-title subtitle">Мало туристов</h3>
-                    <p class="description-text">Большинство едет в Гранд Каньон и толпится там</p>
-                  </div>
-                </li>
-              </ul>
+            <li class="description-item description-square">
+              <div class="item-text">
+                <h3 class="description-title subtitle">Небольшая площадь</h3>
+                <p class="description-text">Все достопримечательности находятся очень близко</p>
+              </div>
             </li>
 
-            <li class="description-item">
-              <img class="photo-bridge" src="images/photo-bridge.jpg" width="800" height="385" alt="Фотография Моста Дьявола.">
+            <li class="description-item description-road ">
+              <div class="item-text">
+                <h3 class="description-title subtitle">Красивая <br> дорога</h3>
+                <p class="description-text">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+              </div>
+            </li>
+
+            <li class="description-item description-tourists">
+              <div class="item-text">
+                <h3 class="description-title subtitle">Мало <br> туристов</h3>
+                <p class="description-text">Большинство едет в Гранд Каньон и толпится там</p>
+              </div>
+            </li>
+
+            <li class="description-item description-item-bridge">
               <div class="item-text">
                 <h3 class="description-title subtitle">Там есть мост дьявола</h3>
                 <p class="description-text">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
               </div>
+              <img class="photo-bridge" src="images/photo-bridge.jpg" width="800" height="385" alt="Фотография Моста Дьявола.">
             </li>
           </ol>
         </article>
 
         <section class="features" data-test="advantages">
-          <h2 class="visually-hidden">Преимущества отдыха в Седоне</h2>
-          <p class="features-text heading">Приезжайте в Седону отдохнуть в комфорте и уюте!</p>
-          <p class="features-text headline">Опытный персонал и качественное обслуживание!</p>
+           <!-- После рестроспективы добавила обертку к тексту -->
+           <div class="features-wrapper">
+              <h2 class="visually-hidden">Преимущества отдыха в Седоне</h2>
+              <p class="features-text heading">Приезжайте в Седону отдохнуть<br> в комфорте и уюте!</p>
+              <p class="features-text headline">Опытный персонал и качественное обслуживание!</p>
+           </div>
+
           <ul class="features-list">
             <li class="features-item">
               <h3 class="features-title subtitle">Жильё</h3>
@@ -115,24 +121,32 @@
               <p class="features-text">Всегда заказывайте топовый фирменный бургер, вы не разочаруетесь</p>
             <li class="features-item">
               <h3 class="features-title subtitle">Сувениры</h3>
-              <p class="features-text">Не только китайского, но и настоящего местного производства!</p>
+              <p class="features-text">Не только китайского, <br> но и настоящего местного производства!</p>
             </li>
           </ul>
         </section>
 
         <section class="search" data-test="search">
-          <h2 class="search-title heading">Заинтересовались?</h2>
-          <p class="search-text headline">Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <a class="button button-big">Поиск гостиницы в Седоне</a>
+          <!-- После рестроспективы добавила обертку к тексту -->
+          <div class="search-wrapper">
+            <h2 class="search-title heading">Заинтересовались?</h2>
+            <p class="search-text headline">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+            <a class="search-button button button-big" href="#">Поиск гостиницы в Седоне</a>
+          </div>
         </section>
 
         <section class="subscribe" data-test="subscribe">
-          <h2 class="subscribe-title heading">Подпишитесь на рассылку</h2>
-          <p class="subscribe-text headline">Только полезная информация и никакого спама, честное бойскаутское</p>
-          <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input type="email" name="email" placeholder="Ваш e-mail">
-            <button class="button button-big button-subscribe" type="submit">подписаться</button>
-          </form>
+          <!-- После рестроспективы добавила обертку к тексту -->
+          <div class="subscribe-wrapper">
+            <h2 class="subscribe-title heading">Подпишитесь на рассылку</h2>
+            <p class="subscribe-text headline">Только полезная информация и никакого спама,<br> честное бойскаутское</p>
+          </div>
+            <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
+              <input class="email" type="email" name="email" placeholder="Ваш e-mail">
+              <button class="button button-big button-subscribe" type="submit">подписаться</button>
+            </form>
+
+
         </section>
       </main>
 
