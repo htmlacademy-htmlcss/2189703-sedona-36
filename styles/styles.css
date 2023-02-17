@@ -222,6 +222,10 @@ body {
   background-color: #82B3D3;
 }
 
+.description-item img {
+  display: block;
+}
+
 .description-item-bridge {
   flex-direction: row-reverse;
 }
@@ -320,7 +324,6 @@ body {
   background-image: url(../images/subscribe-background.jpg);
   background-size: cover;
   color: #ffffff;
-  padding-bottom: 104px;
 }
 
  .subscribe-wrapper {
@@ -335,6 +338,7 @@ body {
   display: flex;
   width: 684px;
   margin: 0 auto;
+  padding-bottom: 104px;
  }
 
  .email  {
@@ -465,7 +469,7 @@ body {
 }
 
 .catalog-filter-group {
-width: 150px;
+min-width: 150px;
 margin-right: 70px;
 border: none;
 
@@ -484,7 +488,7 @@ border: none;
 }
 
 .catalog-filter-cost {
-  width: 288px;
+  min-width: 288px;
   margin-left: auto;
 
    outline: 5px solid rgb(69, 73, 10);
@@ -493,7 +497,8 @@ border: none;
 
 .catalog-filter-buttons {
   align-self: flex-end;
-  width: 191px;
+  min-width: 191px;
+  margin-right: 0;
 
    outline: 5px solid rgb(106, 39, 206);
   outline-offset: -5px;
@@ -514,11 +519,14 @@ border: none;
 }
 
 /* Секция результатов фильтра */
+.catalog-result-search {
+  padding: 50px 70px 60px;
+}
 
 .catalog-result-search-view {
   display: flex;
   justify-content: space-between;
-  padding: 50px 70px 40px;
+  margin-bottom: 40px;
 }
 
 .catalog-found {
@@ -569,30 +577,35 @@ border: none;
 }
 
 /* Список отфильтрованных отелей */
+/* Переделано с флексов на гриды */
 
 .catalog-hotels {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
   width: 1060px;
   margin: 0 auto;
+  margin-bottom: 80px;
   padding: 0;
   list-style-type: none;
 }
 
 .catalog-hotel {
-  width: 300px;
   padding: 20px;
+
 
    outline: 5px solid rgb(134, 245, 87);
   outline-offset: -5px;
 }
 
+/* Карточка отеля */
 .hotel-link {
   text-decoration: none ;
 }
 
-/* Карточка отеля */
+.hotel-img {
+  display: block;
+}
 
 .hotel-title {
   display: inline-block;
@@ -647,8 +660,7 @@ border: none;
   display: flex;
   flex-wrap: wrap;
   width: 1060px;
-  margin: 60px 70px 80px;
-  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
@@ -663,7 +675,7 @@ border: none;
   display: block;
   min-width: 23px;
   min-height: 36px;
-  padding: 15px 0;
+  padding: 15px 15px;
   box-sizing: border-box;
   font-size: 20px;
   font-weight: 700;
@@ -688,6 +700,5 @@ border: none;
 /* Секция подписки для каталога */
 
 .subscribe-catalog {
-  padding-bottom: 104px;
   background-color: #ffffff;
 }
