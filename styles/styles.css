@@ -130,6 +130,9 @@ body {
   width: 138px;
   margin-right: 30px;
 }
+.logo img {
+  display: block;
+}
 
 .navigation-list {
   display: flex;
@@ -193,7 +196,6 @@ body {
 }
 
 /* Статья-описание Седоны */
-
 
 .description-wrapper {
   width: 800px;
@@ -315,7 +317,6 @@ body {
   /* отодвинула кнопку сверху, чтобы текст шел непрерывным потоком без "дырок" между параграфами */
   padding: 8px 50px;
 }
-
 
 /* Блок подписки */
 
@@ -599,6 +600,7 @@ border: none;
   column-gap: 20px;
   row-gap: 16px;
   justify-items: start;
+  align-items: center;
   padding: 20px;
   border: 1px solid #E6E6E6;
 }
@@ -608,7 +610,7 @@ border: none;
   grid-column: 1/-1;
   margin: 0;
   padding: 0;
-
+  text-align: left;
   text-decoration: none ;
 }
 
@@ -646,6 +648,7 @@ border: none;
 
 /* Звездность и рейтинг отеля */
 .hotel-star {
+  align-self: stretch;
   margin: 0;
   margin-top: 10px;
   background-image: url(../images/star.svg);
