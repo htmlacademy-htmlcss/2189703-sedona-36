@@ -52,7 +52,7 @@ body {
 /* Общие правила для кнопок, будут меняться */
 
 .button {
-  display: inline-block;
+  display: block;
   min-width: 140px;
   box-sizing: border-box;
   font-size: 16px;
@@ -589,17 +589,26 @@ border: none;
   padding: 0;
   list-style-type: none;
 }
+/* Карточка отеля */
+
 
 .catalog-hotel {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 212px auto;
+  column-gap: 20px;
+  row-gap: 16px;
+  justify-items: start;
   padding: 20px;
-
-
-   outline: 5px solid rgb(134, 245, 87);
-  outline-offset: -5px;
+  border: 1px solid #E6E6E6;
 }
 
-/* Карточка отеля */
 .hotel-link {
+  display: block;
+  grid-column: 1/-1;
+  margin: 0;
+  padding: 0;
+
   text-decoration: none ;
 }
 
@@ -610,10 +619,20 @@ border: none;
 .hotel-title {
   display: inline-block;
   margin: 0;
-  padding: 16px 0;
   text-transform: none;
   color: #000000;
 }
+.hotel-price {
+  justify-self: end;
+}
+.hotel-raiting {
+  text-align: center;
+  align-self: center;
+  min-width: 140px;
+  padding: 8px 0;
+  margin: 0;
+}
+
 
 .hotel-choose {
   border: none;
@@ -626,26 +645,23 @@ border: none;
 
 
 /* Звездность и рейтинг отеля */
-.hotel-four-star {
+.hotel-star {
+  margin: 0;
+  margin-top: 10px;
   background-image: url(../images/star.svg);
   background-repeat: repeat-x;
+}
+.hotel-four-star {
   width: 96px;
-  height: 40px;
 }
 
 .hotel-three-star {
-  background-image: url(../images/star.svg);
-  background-repeat: repeat-x;
   width: 72px;
-  height: 40px;
 }
 
 .hotel-two-star {
-  background-image: url(../images/star.svg);
-  background-repeat: repeat-x;
   width: 48px;
-  height: 40px;
-}
+ }
 
 .hotel-raiting {
   font-size: 16px;
@@ -695,7 +711,6 @@ border: none;
     background: none;
     color: #000000;
 }
-
 
 /* Секция подписки для каталога */
 
