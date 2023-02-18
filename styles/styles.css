@@ -52,7 +52,7 @@ body {
 /* Общие правила для кнопок, будут меняться */
 
 .button {
-  display: inline-block;
+  display: block;
   min-width: 140px;
   box-sizing: border-box;
   font-size: 16px;
@@ -130,6 +130,9 @@ body {
   width: 138px;
   margin-right: 30px;
 }
+.logo img {
+  display: block;
+}
 
 .navigation-list {
   display: flex;
@@ -194,7 +197,6 @@ body {
 
 /* Статья-описание Седоны */
 
-
 .description-wrapper {
   width: 800px;
   margin: 0 auto;
@@ -220,6 +222,10 @@ body {
   flex-wrap: wrap;
   color: #ffffff;
   background-color: #82B3D3;
+}
+
+.description-item img {
+  display: block;
 }
 
 .description-item-bridge {
@@ -312,7 +318,6 @@ body {
   padding: 8px 50px;
 }
 
-
 /* Блок подписки */
 
 .subscribe {
@@ -320,7 +325,6 @@ body {
   background-image: url(../images/subscribe-background.jpg);
   background-size: cover;
   color: #ffffff;
-  padding-bottom: 104px;
 }
 
  .subscribe-wrapper {
@@ -335,6 +339,7 @@ body {
   display: flex;
   width: 684px;
   margin: 0 auto;
+  padding-bottom: 104px;
  }
 
  .email  {
@@ -465,7 +470,7 @@ body {
 }
 
 .catalog-filter-group {
-width: 150px;
+min-width: 150px;
 margin-right: 70px;
 border: none;
 
@@ -484,7 +489,7 @@ border: none;
 }
 
 .catalog-filter-cost {
-  width: 288px;
+  min-width: 288px;
   margin-left: auto;
 
    outline: 5px solid rgb(69, 73, 10);
@@ -493,7 +498,8 @@ border: none;
 
 .catalog-filter-buttons {
   align-self: flex-end;
-  width: 191px;
+  min-width: 191px;
+  margin-right: 0;
 
    outline: 5px solid rgb(106, 39, 206);
   outline-offset: -5px;
@@ -514,11 +520,14 @@ border: none;
 }
 
 /* Секция результатов фильтра */
+.catalog-result-search {
+  padding: 50px 70px 60px;
+}
 
 .catalog-result-search-view {
   display: flex;
   justify-content: space-between;
-  padding: 50px 70px 40px;
+  margin-bottom: 40px;
 }
 
 .catalog-found {
@@ -569,38 +578,63 @@ border: none;
 }
 
 /* Список отфильтрованных отелей */
+/* Переделано с флексов на гриды */
 
 .catalog-hotels {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 20px;
   width: 1060px;
   margin: 0 auto;
+  margin-bottom: 80px;
   padding: 0;
   list-style-type: none;
 }
+/* Карточка отеля */
+
 
 .catalog-hotel {
-  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 212px auto;
+  column-gap: 20px;
+  row-gap: 16px;
+  justify-items: start;
+  align-items: center;
   padding: 20px;
-
-   outline: 5px solid rgb(134, 245, 87);
-  outline-offset: -5px;
+  border: 1px solid #E6E6E6;
 }
 
 .hotel-link {
+  display: block;
+  grid-column: 1/-1;
+  margin: 0;
+  padding: 0;
+  text-align: left;
   text-decoration: none ;
 }
 
-/* Карточка отеля */
+.hotel-img {
+  display: block;
+}
 
 .hotel-title {
   display: inline-block;
   margin: 0;
-  padding: 16px 0;
   text-transform: none;
   color: #000000;
 }
+.hotel-price {
+  justify-self: end;
+}
+.hotel-raiting {
+  text-align: center;
+  align-self: center;
+  min-width: 140px;
+  padding: 8px 0;
+  margin: 0;
+}
+
 
 .hotel-choose {
   border: none;
@@ -613,26 +647,24 @@ border: none;
 
 
 /* Звездность и рейтинг отеля */
-.hotel-four-star {
+.hotel-star {
+  align-self: stretch;
+  margin: 0;
+  margin-top: 10px;
   background-image: url(../images/star.svg);
   background-repeat: repeat-x;
+}
+.hotel-four-star {
   width: 96px;
-  height: 40px;
 }
 
 .hotel-three-star {
-  background-image: url(../images/star.svg);
-  background-repeat: repeat-x;
   width: 72px;
-  height: 40px;
 }
 
 .hotel-two-star {
-  background-image: url(../images/star.svg);
-  background-repeat: repeat-x;
   width: 48px;
-  height: 40px;
-}
+ }
 
 .hotel-raiting {
   font-size: 16px;
@@ -647,8 +679,7 @@ border: none;
   display: flex;
   flex-wrap: wrap;
   width: 1060px;
-  margin: 60px 70px 80px;
-  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
 
@@ -663,7 +694,7 @@ border: none;
   display: block;
   min-width: 23px;
   min-height: 36px;
-  padding: 15px 0;
+  padding: 15px 15px;
   box-sizing: border-box;
   font-size: 20px;
   font-weight: 700;
@@ -684,10 +715,8 @@ border: none;
     color: #000000;
 }
 
-
 /* Секция подписки для каталога */
 
 .subscribe-catalog {
-  padding-bottom: 104px;
   background-color: #ffffff;
 }
