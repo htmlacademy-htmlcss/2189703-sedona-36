@@ -190,8 +190,7 @@ body {
 
 .hero {
   padding: 51px 0 82px;
-  background-color: #3F5E72;
-  background-image: url(../images/hero-background.jpg);
+  background: #3F5E72 url(../images/hero-background.jpg);
   background-size: cover;
 }
 
@@ -321,8 +320,7 @@ body {
 /* Блок подписки */
 
 .subscribe {
-  background-color: #3F5E72;
-  background-image: url(../images/subscribe-background.jpg);
+  background: #3F5E72 url(../images/subscribe-background.jpg);
   background-size: cover;
   color: #ffffff;
 }
@@ -413,8 +411,7 @@ body {
 
 .wrapper {
   text-align: left;
-  background-color: #3F5E72;
-  background-image: url(../images/filter-background.jpg);
+  background: #3F5E72 url(../images/filter-background.jpg);
   background-size: cover;
   color: #ffffff;
 }
@@ -650,9 +647,7 @@ border: none;
 .hotel-star {
   align-self: stretch;
   margin: 0;
-  margin-top: 10px;
-  background-image: url(../images/star.svg);
-  background-repeat: repeat-x;
+  background: url(../images/star.svg) repeat-x 0 50%;
 }
 .hotel-four-star {
   width: 96px;
@@ -680,6 +675,7 @@ border: none;
   flex-wrap: wrap;
   width: 1060px;
   margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
