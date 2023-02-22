@@ -166,6 +166,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
   min-width: 270px;
   margin-left: auto;
   }
@@ -173,6 +174,28 @@ body {
 .navigation-user .navigation-link {
   min-width: 44px;
   padding: 20px 10px;
+}
+
+.navigation-search {
+  background: url(../images/icons/search.svg) no-repeat center;
+}
+
+.navigation-favor {
+  position: relative;
+  background: url(../images/icons/heart.svg) no-repeat center;
+}
+
+.navigation-favor::before {
+  content: "12";
+  position: absolute;
+  right: 0;
+  display: block;
+  padding: 5px;
+  background-color: #7DB54F;
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  border-radius: 50%;
 }
 
 .navigation-link.button {
@@ -183,14 +206,7 @@ body {
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
-}
-
-
-.selected-quantity {
-  background-color: #7DB54F;
-  font-size: 10px;
-  line-height: 10px;
-  color: #ffffff;
+  border-radius: 4px;
 }
 
 /* Главная страница */
