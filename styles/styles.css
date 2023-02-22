@@ -13,6 +13,12 @@
     font-weight: 700;
     font-display: swap;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
   height: 100%;
 }
@@ -38,7 +44,7 @@ body {
   /* Стакан */
 
   width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   text-align: center;
   background-color: #ffffff;
 }
@@ -52,9 +58,8 @@ body {
 /* Общие правила для кнопок, будут меняться */
 
 .button {
-  display: block;
+  display: inline-block;
   min-width: 140px;
-  box-sizing: border-box;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -63,8 +68,9 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   background-color: #756157;
-  padding: 8px 0;
-
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
 }
 
 .button-big {
@@ -75,7 +81,7 @@ body {
 /* Общие правила для шрифтов, будут меняться */
 
 .heading {
-  margin: 0 auto;
+  margin: auto;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 30px;
@@ -84,19 +90,20 @@ body {
 }
 
 .headline {
-  margin: 0 auto;
+  margin: auto;
   padding: 0;
   font-size: 22px;
   line-height: 26px;
 }
 
 .subtitle {
-  margin: 0 auto;
+  margin: auto;
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
 }
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -116,20 +123,20 @@ body {
 
 .page-header {
   width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   background-color: #ffffff;
 }
 
 .navigation {
   display: flex;
   width: 1060px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .logo {
-  width: 138px;
   margin-right: 30px;
 }
+
 .logo img {
   display: block;
 }
@@ -138,6 +145,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
+
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -157,22 +165,21 @@ body {
 .navigation-user {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   min-width: 270px;
   margin-left: auto;
   }
 
 .navigation-user .navigation-link {
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 44px;
   padding: 20px 10px;
 }
 
 .navigation-link.button {
+  display: block;
   min-width: 160px;
   padding: 8px 32px;
-  margin: 14px 0;
-  box-sizing: border-box;
+  margin: 14px 0 14px 20px;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
@@ -198,7 +205,7 @@ body {
 
 .description-wrapper {
   width: 800px;
-  margin: 0 auto;
+  margin: auto;
   margin-bottom: 21px;
   padding: 69px 0;
 }
@@ -267,7 +274,7 @@ body {
 
 .features-wrapper {
   width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding: 64px 0;
 }
 
@@ -303,7 +310,7 @@ body {
 
 .search-wrapper {
   width: 800px;
-  margin: 0 auto;
+  margin: auto;
   text-align: center;
 }
 
@@ -311,7 +318,7 @@ body {
 .search-button {
   display: block;
   width: 376px;
-  margin: 0 auto;
+  margin: auto;
   margin-top: 54px;
   /* отодвинула кнопку сверху, чтобы текст шел непрерывным потоком без "дырок" между параграфами */
   padding: 8px 50px;
@@ -327,7 +334,7 @@ body {
 
  .subscribe-wrapper {
   width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding-top: 96px;
   margin-bottom: 54px;
   /* Отталкивает форму подписки */
@@ -336,7 +343,7 @@ body {
  .subscribe-form {
   display: flex;
   width: 684px;
-  margin: 0 auto;
+  margin: auto;
   padding-bottom: 104px;
  }
 
@@ -347,7 +354,6 @@ body {
 
 .button-subscribe {
   width: 232px;
-  box-sizing: border-box;
   padding: 8px 50px;
   background-color: #82B3D3;
   border: none;
@@ -357,15 +363,16 @@ body {
 
 .page-footer {
   width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   background-color: #ffffff;
 }
 
 .page-footer-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 1060px;
-  margin: 0 auto;
+  margin: auto;
   padding-top: 40px;
   padding-bottom: 30px;
 }
@@ -383,11 +390,12 @@ body {
 .social-link {
   display: block;
   min-width: 47px;
-  min-height: 40px;
-  box-sizing: border-box;
   padding: 12px 10px;
 }
 
+.social-link svg {
+  display: block;
+}
 
 .tel {
   display: block;
@@ -399,11 +407,9 @@ body {
   color: #000000;
 }
 
-.logo-academy {
+.logo-academy svg {
   display: block;
-  width: 115px;
-  height: 34px;
-  margin-top: 10px;
+  color: #c20b45;
 }
 
 /* Сраница каталога */
@@ -582,7 +588,7 @@ border: none;
   grid-template-columns: repeat(3, 340px);
   gap: 20px;
   width: 1060px;
-  margin: 0 auto;
+  margin: auto;
   margin-bottom: 80px;
   padding: 0;
   list-style-type: none;
@@ -593,13 +599,17 @@ border: none;
 .catalog-hotel {
   display: grid;
   grid-template-columns: repeat(2, 140px);
-  grid-template-rows: 212px auto;
   column-gap: 20px;
   row-gap: 16px;
   justify-items: start;
   align-items: center;
   padding: 20px;
   border: 1px solid #E6E6E6;
+}
+
+.hotel-img {
+  display: block;
+  margin-bottom: 16px;
 }
 
 .hotel-link {
@@ -611,9 +621,7 @@ border: none;
   text-decoration: none ;
 }
 
-.hotel-img {
-  display: block;
-}
+
 
 .hotel-title {
   display: inline-block;
@@ -634,7 +642,7 @@ border: none;
 
 
 .hotel-choose {
-  border: none;
+  padding: 8px 10px;
   background-color: #82B3D3;
 }
 
@@ -690,8 +698,7 @@ border: none;
   display: block;
   min-width: 23px;
   min-height: 36px;
-  padding: 15px 15px;
-  box-sizing: border-box;
+  padding: 15px;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
