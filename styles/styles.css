@@ -146,7 +146,8 @@ body {
 
 .logo img {
   position: absolute;
-  display: block;
+  left: 0;
+  z-index: 1;
 }
 
 .navigation-list {
@@ -180,8 +181,8 @@ body {
   }
 
 .navigation-user .navigation-link {
-  min-width: 44px;
-  padding: 20px 10px;
+  min-width: 20px;
+  padding: 22px 12px;
 }
 
 .navigation-search {
@@ -196,7 +197,7 @@ body {
 .navigation-favor::before {
   content: "12";
   position: absolute;
-  right: 10px;
+  right: 0;
   display: block;
   padding: 5px;
   background-color: #7DB54F;
@@ -219,10 +220,21 @@ body {
 /* Главная страница */
 
 .hero {
-  padding: 51px 0 82px;
+  position: relative;
+  padding: 50px 0 80px;
   background: #3F5E72 url(../images/hero-background.jpg);
   background-size: cover;
-}
+  }
+
+  .hero::before {
+    position: absolute;
+    width: 1200px;
+    height: 57px;
+    content: "";
+    bottom: 0;
+    left: 0;
+    background-image: url(../images/divider.svg);
+  }
 
 /* Статья-описание Седоны */
 
@@ -231,6 +243,10 @@ body {
   margin: auto;
   margin-bottom: 21px;
   padding: 69px 0;
+}
+
+.description-text.heading {
+  margin-bottom: 25px;
 }
 
 .description-list {
@@ -246,25 +262,53 @@ body {
 .description-item {
   display: flex;
   flex-wrap: wrap;
+  max-height: 385px;
   box-sizing: content-box;
   background-color: #82B3D3;
 }
-
 
 
 .description-item img {
   display: block;
 }
 
-.description-item-bridge {
+.description-bridge {
+  display: flex;
   flex-direction: row-reverse;
 }
 
 .item-text {
   width: 230px;
   min-height: 200px;
-  padding: 90px 85px;
+  padding: 112px 85px;
 }
+.description-title {
+  padding-bottom: 30px;
+}
+.description-title::after {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.description-title-image {
+  margin: 0;
+  margin-top: -10px;
+}
+
+.description-title-image::after {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.description-text {
+  margin: 0;
+}
+
+
 
 .description-town .item-text,
 .description-town .description-title,
