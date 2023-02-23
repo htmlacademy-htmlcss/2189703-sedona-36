@@ -334,7 +334,6 @@ body {
   padding: 64px 0;
 }
 
-
 .features-list {
   display: flex;
   flex-wrap: wrap;
@@ -345,17 +344,23 @@ body {
 
 .features-item {
   width: 230px;
-  padding: 81px 85px;
-  background-color: rgba(131, 179, 211, 0.12);
+  padding: 183px 85px 81px;
 }
 
 .features-title {
-  margin-top: 90px;
   margin-bottom: 30px;
 }
-
+.features-item .features-text {
+  margin: 0;
+}
+.features-housung {
+  background:  rgba(131, 179, 211, 0.12) url(../images/advantage-icon/housing.svg) no-repeat center 81px;
+}
 .features-food {
-  background-color: #ffffff;
+  background: #ffffff url(../images/advantage-icon/food.svg) no-repeat center 81px;
+}
+.features-present {
+  background:  rgba(131, 179, 211, 0.12) url(../images/advantage-icon/present.svg) no-repeat center 79px;
 }
 
 /* Блок перехода к поиску гостиницы */
@@ -388,6 +393,10 @@ body {
   color: #ffffff;
 }
 
+.subscribe-title {
+  color: #ffffff;
+}
+
  .subscribe-wrapper {
   width: 800px;
   margin: auto;
@@ -408,12 +417,21 @@ body {
   padding-left: 20px;
  }
 
+ .email[placeholder] {
+  font-size: 18px;
+  line-height: 24px;
+ }
+
 .button-subscribe {
   width: 232px;
   padding: 8px 50px;
   background-color: #82B3D3;
   border: none;
+
+  font-stretch: condensed;
+  letter-spacing: 1px;
 }
+
 
 /* Подвал сайта */
 
@@ -425,7 +443,6 @@ body {
 
 .page-footer-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 1060px;
   margin: auto;
@@ -437,6 +454,8 @@ body {
 .footer-social-list {
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
   width: 235px;
   margin: 0;
   padding: 0;
@@ -445,27 +464,32 @@ body {
 
 .social-link {
   display: block;
-  min-width: 47px;
-  padding: 12px 10px;
+  min-width: 23px;
+  padding: 12px;
 }
 
-.social-link svg {
-  display: block;
+.social-icon {
+  fill: #83B3D3;
 }
+.social-icon {
+
+}
+
 
 .tel {
   display: block;
   width: 335px;
   padding: 5px 0;
+  margin-left: auto;
+  margin-right: 235px;
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
   color: #000000;
 }
 
-.logo-academy svg {
-  display: block;
-  color: #c20b45;
+.academy-icon {
+  fill: #000000;
 }
 
 /* Сраница каталога */
