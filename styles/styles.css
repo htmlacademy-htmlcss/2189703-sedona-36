@@ -59,19 +59,18 @@ body {
 
 .button {
   display: inline-block;
-  min-width: 140px;
   box-sizing: border-box;
+  min-width: 140px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
   background-color: #756157;
   padding: 8px 18px;
+  text-align: center;
   border: none;
-  outline: none;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -471,7 +470,6 @@ body {
   letter-spacing: 1px;
 }
 
-
 /* Подвал сайта */
 
 .page-footer {
@@ -511,15 +509,13 @@ body {
   fill: #83B3D3;
 }
 /* На векторных иконках при фокусе цвет не меняется */
-.social-icon:hover,
-.social-icon:focus {
+.social-icon:hover  {
   fill: #68A2CA;
-  outline: none;
 }
+
 .social-icon:active {
   fill: rgba(104, 162, 202, 0.3);
 }
-
 
 .tel {
   display: block;
@@ -948,7 +944,7 @@ border: none;
 .pagination-link:hover,
 .pagination-link:focus {
   background-color: #68A2CA;
-  border: 1px solid #82B3D3;
+  box-shadow: inset 0 0 0 1px #82B3D3;
   outline: none;
 }
 .pagination-link:active {
@@ -962,7 +958,7 @@ border: none;
 .pagination-current:active {
     background-color: #F2F2F2;
     color: #000000;
-    border: none;
+    box-shadow: none;
 }
 .dots {
   background: none;
