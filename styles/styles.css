@@ -74,7 +74,9 @@ body {
   cursor: pointer;
   border-radius: 4px;
 }
-.button:hover,
+.button:hover {
+  background-color: #615048;
+}
 .button:focus {
   background-color: #615048;
 }
@@ -89,7 +91,9 @@ body {
 .button-add-color {
   background-color: #82B3D3;
 }
-.button-add-color:hover,
+.button-add-color:hover {
+  background-color: #68A2CA;
+}
 .button-add-color:focus {
   background-color: #68A2CA;
 }
@@ -508,8 +512,12 @@ body {
 .social-icon {
   fill: #83B3D3;
 }
-/* На векторных иконках при фокусе цвет не меняется */
+
 .social-icon:hover  {
+  fill: #68A2CA;
+}
+
+.social-link:focus svg {
   fill: #68A2CA;
 }
 
@@ -541,11 +549,13 @@ body {
 .academy-icon {
   fill: #000000;
 }
-/* На векторных иконках при фокусе цвет не меняется */
-.academy-icon:hover,
-.academy-icon:focus {
+
+.academy-icon:hover {
   fill: #756157;
   outline: none;
+}
+.logo-academy:focus svg {
+  fill: #756157;
 }
 .academy-icon:active {
   fill: rgba(117, 97, 87, 0.3);
@@ -751,9 +761,13 @@ border: none;
   border-radius: 4px;;
 
   }
-.select-control:hover,
+.select-control:hover {
+  box-shadow: inset 0 0 0 2px #68A2CA;
+  outline: none;
+}
 .select-control:focus {
-  outline: 2px solid #68A2CA ;
+  box-shadow: inset 0 0 0 2px #68A2CA;
+  outline: none;
 }
 .select-control:active {
  border-color: #3F5E72;
@@ -779,23 +793,27 @@ border: none;
   min-width: 16px;
   min-height: 14px;
   padding: 16px;
-  outline: 2px solid #E5E5E5;
+  box-shadow: inset 0 0 0 2px #E5E5E5;
   border-radius: 4px;
 }
-.button-view:focus {
-  outline: 2px solid #68A2CA;
+.button-view:hover {
+  box-shadow: inset 0 0 0 2px #000000;
 }
-.button-view:hover,
-.button-view:active {
-  outline: 2px solid #000000;
+.button-view:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #68A2CA;
 }
 
+.button-view:active {
+  box-shadow: inset 0 0 0 2px #000000;
+}
+.button-active {
+  box-shadow: inset 0 0 0 2px #000000;
+}
 .button-tile {
   background: url(../images/buttons-view/tile.svg) no-repeat center;
 }
-.button-active {
-  outline: 2px solid #000000;
-}
+
 .button-slide {
   background: url(../images/buttons-view/slide.svg) no-repeat center;
 }
