@@ -198,13 +198,12 @@ body {
   color: #000000;
 }
 .navigation-current {
-  display: block;
   position: relative;
 }
 .navigation-current::before {
   content: "";
   position: absolute;
-  width: 70%;
+  width: 75%;
   bottom: 0;
   border-bottom: 2px solid #756257;
   z-index: 1;
@@ -587,12 +586,52 @@ body {
   list-style-type: none;
 }
 
+.breadcrumbs-item {
+  display: block;
+  position: relative;
+}
+
+.breadcrumbs-item::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 11px;
+  top: 25%;
+  right: -2px;
+  background-image: url(../images/icons/arrow.svg);
+}
+
+.breadcrumbs-item:last-child::after {
+  content: none;
+}
+
 .breadcrumbs-link {
   padding: 0 10px;
   font-size: 16px;
   line-height: 21px;
 }
 
+.breadcrumbs-link-home {
+  padding-left: 0;
+  padding-right: 18px;
+}
+
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumbs-home {
+  fill: #ffffff;
+}
+.breadcrumbs-home:hover {
+  fill: rgba(255, 255, 255, 0.6);
+}
+.breadcrumbs-home:active {
+  fill: rgba(255, 255, 255, 0.3);
+}
 /* Секция фильтрации гостиниц */
 
 .catalog-filter {
@@ -601,6 +640,7 @@ body {
 }
 
 .catalog-filter-title {
+  margin-bottom: 32px;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
@@ -618,10 +658,6 @@ border: none;
 
  outline: 5px solid rgb(240, 49, 11);
   outline-offset: -5px;
-}
-
-.catalog-filter-title {
-  margin-bottom: 32px;
 }
 
 .catalog-filter-list {
@@ -643,8 +679,8 @@ border: none;
   min-width: 191px;
   margin-right: 0;
 
-   outline: 5px solid rgb(106, 39, 206);
-  outline-offset: -5px;
+   outline: 1px solid rgb(106, 39, 206);
+  outline-offset: -1px;
 }
 
 .button-apply {
@@ -652,13 +688,35 @@ border: none;
   margin-bottom: 32px;
   background-color: #82B3D3;
   border: none;
+  outline: 1px solid rgb(230, 24, 117);
+  outline-offset: -1px;
 }
 
 .button-reset {
   min-width: 191px;
-
   background-color: transparent;
   border: none;
+  border-radius: 4px;
+  outline: 1px solid rgb(188, 199, 135);
+  outline-offset: -1px;
+}
+.button-reset:hover {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+.button-reset:focus {
+  background-color: transparent;
+  outline: 3px solid #83B3D3;
+}
+
+.button-reset:active {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-reset:disabled {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /* Секция результатов фильтра */
@@ -683,41 +741,74 @@ border: none;
   outline-offset: -5px;
 }
 
-
+/* Не отодвигается стрелочка от правого края селекта */
 .select-control {
   width: 292px;
   margin-left: auto;
+  padding: 14px 20px;
   font-size: 18px;
   line-height: 21px;
+  color: #333333;
+  border: 2px solid #E5E5E5;
+  border-radius: 4px;;
 
-   outline: 5px solid rgb(134, 245, 87);
-  outline-offset: -5px;
+  }
+/* Не работает фокус */
+.select-control:hover,
+.select-control:focus-visible {
+  outline: 2px solid #68A2CA ;
 }
-
+.select-control:active {
+ border-color: #3F5E72;
+}
+.select-control:disabled {
+  color: rgba(0, 0, 0, 0.3);
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+}
 .buttons-view {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   width: 160px;
   margin: 0;
   padding: 0;
   margin-left: 70px;
   list-style-type: none;
 
-   outline: 5px solid rgb(134, 245, 87);
-  outline-offset: -5px;
+   outline: 1px solid rgb(134, 245, 87);
+  outline-offset: -1px;
 }
 
 .button-view {
   display: block;
   min-width: 16px;
   min-height: 14px;
-  padding: 17px 16px;
-
-  outline: 5px solid rgb(21, 4, 78);
-  outline-offset: -5px;
-
+  padding: 16px;
+  outline: 2px solid #E5E5E5;
+  border-radius: 4px;
 }
+.button-view:focus {
+  outline: 2px solid #68A2CA;
+}
+.button-view:hover,
+.button-view:active {
+  outline: 2px solid #000000;
+}
+
+.button-tile {
+  background: url(../images/buttons-view/tile.svg) no-repeat center;
+}
+.button-active {
+  outline: 2px solid #000000;
+}
+.button-slide {
+  background: url(../images/buttons-view/slide.svg) no-repeat center;
+}
+.button-list {
+  background: url(../images/buttons-view/list.svg) no-repeat center;
+}
+
 
 /* Список отфильтрованных отелей */
 /* Переделано с флексов на гриды */
