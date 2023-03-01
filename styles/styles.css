@@ -33,11 +33,6 @@ body {
 
   color: #333333;
 }
-/* Переназначаю браузерные стили на теги кнопок и форм */
-.font-family {
-  font-family: "PT Sans", sans-serif;
-}
-
 /* Sticky footer (липкий футер) и нормализация стилей*/
 
 .page-container {
@@ -65,6 +60,7 @@ body {
   display: inline-block;
   box-sizing: border-box;
   min-width: 140px;
+  font-family: inherit;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -192,13 +188,18 @@ body {
   width: 450px;
 
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
   list-style-type: none;
 }
 
+.navigation-item {
+  padding: 0;
+  margin: 0;
+}
 .navigation-link:not(.button) {
   display: block;
-  padding: 20px 16px;
+  padding: 10px 14px;
+  border: 2px solid transparent;
 
   font-weight: 700;
   font-size: 20px;
@@ -213,7 +214,7 @@ body {
   content: "";
   position: absolute;
   width: calc(100% - 32px);
-  bottom: 0;
+  bottom: -12px;
   border-bottom: 2px solid #756257;
   z-index: 1;
 }
@@ -261,7 +262,7 @@ body {
   display: block;
   min-width: 160px;
   padding: 8px 32px;
-  margin: 14px 0 14px 20px;
+  margin: 6px 0 6px 20px;
   font-size: 16px;
   line-height: 20px;
 }
@@ -663,6 +664,19 @@ body {
   padding-bottom: 70px;
 }
 
+.catalog-filter-group {
+  min-width: 150px;
+  margin: 0;
+  padding: 0;
+  margin-right: 70px;
+  border: none;
+}
+
+.catalog-filter-cost {
+  min-width: 288px;
+  margin-left: auto;
+}
+
 .catalog-filter-title {
   margin-bottom: 32px;
   font-size: 20px;
@@ -673,38 +687,163 @@ body {
 .catalog-filter-list {
   font-size: 18px;
   line-height: 23px;
-}
-
-.catalog-filter-group {
-min-width: 150px;
-margin-right: 70px;
-border: none;
-
- outline: 5px solid rgb(240, 49, 11);
-  outline-offset: -5px;
-}
-
-.catalog-filter-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.catalog-filter-cost {
-  min-width: 288px;
-  margin-left: auto;
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
 
-   outline: 5px solid rgb(69, 73, 10);
-  outline-offset: -5px;
+/* Чекбоксы  */
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+.control-mark {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  left: 0;
+}
+.control:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+.control:hover .control-mark {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.control:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+.control:active .control-mark {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control-input:focus + .control-mark {
+  outline: 3px solid #83B3D3;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  background: #ffffff url(../images/icons/check.svg) center no-repeat;
+}
+
+/* радио-кнопки */
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3F5E72;
+  top: 5px;
+  left: 5px;
+}
+
+/* блок стоимости */
+
+.range-wrapper-inputs {
+  display: flex;
+  width: 288px;
+  margin-bottom: 42px;
+  border-radius: 4px;
+  background-color: #F2F2F2;
+}
+
+.range-label {
+  position: relative;
+}
+
+.range-input {
+  width: 103px;
+  height: 24px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  color: #000000;
+  background-color: #F2F2F2;
+  border: none;
+  appearance: textfield;
+}
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.range-input-till {
+  border-radius: 4px;
+
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 1px solid #000000;
+}
+
+.range-input-next {
+  border-radius: 4px;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: 1px solid #000000;
+}
+
+.range-input:active {
+  outline: 3px solid #000000;
+}
+.range-input:focus,
+.rangle-toggle:focus {
+  position: absolute;
+  outline: 3px solid #68A2CA;
+  z-index: 1;
+  border: none;
+}
+
+
+.input-text {
+  position: absolute;
+  right: 20px;
+  line-height: 24px;
+  top: 12px;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.3)
+
+}
+.range-scale {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.rangle-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.toggle-max {
+  left: 206px;
 }
 
 .catalog-filter-buttons {
   align-self: flex-end;
-  min-width: 191px;
+  width: 191px;
   margin-right: 0;
-
-   outline: 1px solid rgb(106, 39, 206);
-  outline-offset: -1px;
 }
 
 .button-apply {
@@ -758,12 +897,12 @@ border: none;
   text-transform: uppercase;
 }
 
-/* Не отодвигается стрелочка от правого края селекта */
 .select-control {
   width: 292px;
   margin-left: auto;
   padding: 12px 20px;
   padding-right: 40px;
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
@@ -773,20 +912,31 @@ border: none;
   background: #ffffff url(../images/icons/arrow-y.svg) right 20px center no-repeat;
   }
 
-.select-control:hover {
+.select-control:hover,
+.field:hover {
   border-color: #68A2CA;
 }
-.select-control:focus {
+.select-control:focus,
+.field:focus {
   border-color: #68A2CA;
   outline: none;
 }
-.select-control:active {
+
+.select-control:active,
+.field:active {
+ background-color: #ffffff;
  border-color: #3F5E72;
 }
-.select-control:disabled {
+
+.select-control:disabled,
+.field:disabled {
   color: rgba(0, 0, 0, 0.3);
   border-color: rgba(0, 0, 0, 0.3);
 }
+.field::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
 
 .buttons-view {
   display: flex;
