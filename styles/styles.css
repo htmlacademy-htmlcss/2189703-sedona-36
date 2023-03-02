@@ -801,7 +801,13 @@ body {
 .range-input:focus,
 .rangle-toggle:focus {
   outline: 3px solid #68A2CA;
-  z-index: 1;
+  border: none;
+  border-right: 3px solid #68A2CA;
+}
+
+/* Не работает */
+
+.range-input-till:focus .range-input-next {
   border: none;
 }
 
