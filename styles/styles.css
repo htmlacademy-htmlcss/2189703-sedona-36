@@ -793,17 +793,18 @@ body {
   border-bottom-left-radius: 0;
   border-left: 1px solid #000000;
 }
-
+/* Текст введён,  курсор внутри поля - НЕ ПОЛУЧАЕТСЯ!!!*/
 .range-input:active {
   outline: 3px solid #000000;
 }
+
 .range-input:focus,
 .rangle-toggle:focus {
-  position: absolute;
   outline: 3px solid #68A2CA;
   z-index: 1;
   border: none;
 }
+
 
 
 .input-text {
@@ -813,8 +814,8 @@ body {
   top: 12px;
   z-index: 2;
   color: rgba(0, 0, 0, 0.3)
-
 }
+
 .range-scale {
   position: relative;
   height: 4px;
@@ -1158,3 +1159,274 @@ body {
 .subscribe-catalog h2 {
   color: #000000;
 }
+
+
+/* Модальное окно */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 1;
+}
+
+.modal-search {
+  position: relative;
+  width: 577px;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #ffffff;
+}
+.modal-search {
+  border-radius: 30px;
+}
+/* Кнопка закрытия*/
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #F2F2F2 url(../images/icons/close.svg) center no-repeat;
+  cursor: pointer;
+}
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+.modal-close-button:active {
+  background-color: #E6E6E6;
+  opacity: 30%;
+  outline: none;
+}
+
+
+.modal-title {
+  margin-bottom: 64px;
+}
+
+.search-modal-form {
+  display: grid;
+  width: 577px;
+  grid-template-columns: 137px 110px 1fr 110px;
+}
+
+.label-field {
+  display: flex;
+  align-items: center;
+  grid-column: 1/2;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+}
+
+/*   Тултип    */
+
+.label-info-babies {
+  display: grid;
+  margin-top: 12px;
+  grid-template-columns: auto 72px;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  position: relative;
+}
+
+.justify {
+  justify-self: end;
+  padding-right: 10px;
+}
+
+.tooltip-toggle {
+  grid-column: 2/3;
+  width: 26px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.tooltip-icon {
+  width: 2px;
+  height: 12px;
+  padding: 7px 12px;
+  border-radius: 50%;
+  background-color: #83B3D3;
+}
+
+.tooltip-toggle:hover .tooltip-icon {
+  cursor: pointer;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 15px 18px 18px 22px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  width: 216px;
+  display: none;
+
+}
+
+.tooltip-text::before {
+  content: "";
+  width: 19px;
+  height: 9px;
+  background: url(../images/icons/tooltip.svg) center no-repeat;
+  top: -9px;
+  left: 120px;
+  position: absolute;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+
+.field-date {
+  display: block;
+  grid-column: 2/-1;
+  position: relative;
+  padding: 12px 20px;
+  margin-bottom: 4px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  background: #F2F2F2 url(../images/icons/date.svg) center right 14px no-repeat;
+  border: none;
+  border-radius: 4px;
+}
+.field-date:placeholder-shown {
+  opacity: 60%;
+}
+
+
+.field-date:hover {
+  background-color: #E6E6E6;
+}
+.field-date:focus {
+  background-color: #E6E6E6;
+
+  outline: 3px solid #83B3D3;
+  border: none;
+}
+/* НЕ РАБОТАЕТ Текст введён,  курсор внутри поля */
+
+.field-date:active {
+  outline: 3px solid #000000;
+}
+.date-text {
+  display: block;
+  padding: 0 20px;
+  margin-bottom: 23px;
+  grid-column: 2/-1;
+  font-size: 16px;
+  line-height: 21px;
+}
+.error {
+  color: #FF5757;
+}
+/* Кнопки */
+
+.babies-amount::-webkit-outer-spin-button,
+.babies-amount::-webkit-inner-spin-button,
+.grown-amount::-webkit-outer-spin-button,
+.grown-amount::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.buttons-modal {
+  display: flex;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+}
+.button-amount {
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+
+}
+.button-amount svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 14px 10px;
+  background-color: #F2F2F2;
+  border: none;
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.button-amount:hover svg {
+  fill: #000000;
+}
+
+.button-amount:focus {
+  fill: #000000;
+  outline: 3px solid #82B3D3;
+  z-index: 1;
+}
+
+.button-amount:active svg {
+  fill: rgba(117, 97, 87, 0.3);
+  outline: none;
+}
+
+/* Не работает переполнение - 20 детей уже никуда не поедет */
+
+.amount {
+  width: 11px;
+  height: 20px;
+  padding: 14px 10px;
+  background-color: #F2F2F2;
+  border: none;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  fill: rgba(233, 245, 5, 0.966);
+}
+
+
+
+.button-modal {
+  grid-column: 1/-1;
+  padding: 18px;
+  margin-top: 48px;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 10px;
+  background-color: #83B3D3;
+}
+
+
+/* закрывает модальное окно
+
+.modal-container-close {
+  display: none;
+}
+*/
