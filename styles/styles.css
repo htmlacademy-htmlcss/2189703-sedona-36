@@ -54,6 +54,7 @@ body {
   flex-grow: 1;
 }
 
+
 /* Общие правила для кнопок, будут меняться */
 
 .button {
@@ -87,6 +88,7 @@ body {
 }
 .button:disabled {
   background-color: #E5E5E5;
+  cursor: default;
 }
 
 .button-add-color {
@@ -105,6 +107,7 @@ body {
 
 .button-add-color:disabled {
   background-color: #E5E5E5;
+  cursor: default;
 }
 
 .button-big {
@@ -196,6 +199,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
 .navigation-link:not(.button) {
   display: block;
   padding: 10px 14px;
@@ -207,6 +211,10 @@ body {
   text-decoration: none;
   color: #000000;
 }
+
+
+
+
 .navigation-current {
   position: relative;
 }
@@ -233,6 +241,7 @@ body {
   padding: 22px 12px;
 }
 
+
 .navigation-search {
   background: url(../images/icons/search.svg) no-repeat center;
 }
@@ -256,6 +265,31 @@ body {
   line-height: 10px;
   color: #ffffff;
   border-radius: 50%;
+}
+
+/* Общие правила интерактивности ссылок для шапки и подвала */
+
+.navigation-link:not(.button):hover,
+.navigation-link:not(.button):focus,
+.tel:hover,
+.tel:focus {
+  color: #756157;
+}
+
+.navigation-link:not(.button):active,
+.tel:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
+.navigation-svg:hover,
+.navigation-svg:focus {
+  background-color: #ffffff;
+  opacity: 60%;
+}
+
+.navigation-svg:active {
+  background-color: #ffffff;
+  opacity: 30%;
 }
 
 .navigation-link.button {
@@ -463,7 +497,7 @@ body {
   padding-bottom: 104px;
  }
 
- .email  {
+ .email.field  {
   flex-grow: 1;
   padding: 12px 20px;
   font-size: 18px;
@@ -544,14 +578,6 @@ body {
   line-height: 40px;
   text-decoration: none;
   color: #000000;
-}
-
-.tel:hover,
-.tel:focus {
-  color: #756157;
-}
-.tel:active {
-  color: rgba(117, 97, 87, 0.3);
 }
 
 .academy-icon {
@@ -883,6 +909,7 @@ body {
 .button-reset:disabled {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.3);
+  cursor: default;
 }
 
 /* Секция результатов фильтра */
@@ -939,11 +966,8 @@ body {
 .field:disabled {
   color: rgba(0, 0, 0, 0.3);
   border-color: rgba(0, 0, 0, 0.3);
+  cursor: default;
 }
-.field::placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
 
 .buttons-view {
   display: flex;
@@ -1218,6 +1242,13 @@ body {
   outline: none;
 }
 
+/* Временное закрытие модального окна */
+
+.modal-close-button:active .modal-container-close {
+  display: none;
+}
+
+
 
 .modal-title {
   margin-bottom: 64px;
@@ -1332,6 +1363,7 @@ body {
 }
 
 
+
 .field-date:hover {
   background-color: #E6E6E6;
 }
@@ -1346,6 +1378,13 @@ body {
 .field-date:active {
   outline: 3px solid #000000;
 }
+
+.field-date:disabled {
+  background-color: #E5E5E5;
+  opacity: 30%;
+  cursor: default;
+}
+
 .date-text {
   display: block;
   padding: 0 20px;
@@ -1354,6 +1393,8 @@ body {
   font-size: 16px;
   line-height: 21px;
 }
+
+
 .error {
   color: #FF5757;
 }
@@ -1429,8 +1470,7 @@ body {
   background-color: #83B3D3;
 }
 
-
-/* закрывает модальное окно
+/*
 
 .modal-container-close {
   display: none;
