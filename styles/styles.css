@@ -18,19 +18,19 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   height: 100%;
   background-color: #F2F2F2;
 }
+
 body {
   margin: 0 auto;
-  width: 1280px;
+  min-width: 1280px;
   height: 100%;
-
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
-
   color: #333333;
 }
 /* Sticky footer (липкий футер) и нормализация стилей*/
@@ -54,8 +54,7 @@ body {
   flex-grow: 1;
 }
 
-
-/* Общие правила для кнопок, будут меняться */
+/* Общие правила для кнопок */
 
 .button {
   display: inline-block;
@@ -79,13 +78,16 @@ body {
 .button:hover {
   background-color: #615048;
 }
+
 .button:focus {
   background-color: #615048;
 }
+
 .button:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #756157;
 }
+
 .button:disabled {
   background-color: #E5E5E5;
   cursor: default;
@@ -94,12 +96,15 @@ body {
 .button-add-color {
   background-color: #82B3D3;
 }
+
 .button-add-color:hover {
   background-color: #68A2CA;
 }
+
 .button-add-color:focus {
   background-color: #68A2CA;
 }
+
 .button-add-color:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82B3D3;
@@ -157,8 +162,6 @@ body {
   overflow: hidden;
 }
 
-
-
 /* Шапка сайта */
 
 .page-header {
@@ -175,21 +178,30 @@ body {
 
 .logo {
   position: relative;
-  width: 140px;
+  width: 112px;
   margin-right: 30px;
 }
 
-.logo img {
+.logo-img {
   position: absolute;
+  top: 0;
   left: 0;
   z-index: 1;
+}
+
+.logo[href]:hover .logo-img,
+.logo[href]:focus .logo-img {
+  opacity: 60%;
+}
+
+.logo[href]:active .logo-img {
+  opacity: 30%;
 }
 
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
-
   margin: 0;
   padding: 8px 0;
   list-style-type: none;
@@ -211,9 +223,6 @@ body {
   text-decoration: none;
   color: #000000;
 }
-
-
-
 
 .navigation-current {
   position: relative;
@@ -240,7 +249,6 @@ body {
   min-width: 20px;
   padding: 22px 12px;
 }
-
 
 .navigation-search {
   background: url(../images/icons/search.svg) no-repeat center;
@@ -269,26 +277,24 @@ body {
 
 /* Общие правила интерактивности ссылок для шапки и подвала */
 
-.navigation-link:not(.button):hover,
+.navigation-link[href]:not(.button):hover,
 .navigation-link:not(.button):focus,
 .tel:hover,
 .tel:focus {
   color: #756157;
 }
 
-.navigation-link:not(.button):active,
+.navigation-link[href]:not(.button):active,
 .tel:active {
   color: rgba(117, 97, 87, 0.3);
 }
 
-.navigation-svg:hover,
-.navigation-svg:focus {
-  background-color: #ffffff;
+.navigation-user .navigation-link:not(.button):hover,
+.navigation-user .navigation-link:not(.button):focus {
   opacity: 60%;
 }
 
-.navigation-svg:active {
-  background-color: #ffffff;
+.navigation-user .navigation-link:not(.button):active {
   opacity: 30%;
 }
 
@@ -310,16 +316,15 @@ body {
   background-size: cover;
   }
 
-  .hero::before {
-    position: absolute;
-    width: 1200px;
-    height: 57px;
-    content: "";
-    bottom: 0;
-    left: 0;
-    background-image: url(../images/divider.svg);
+.hero::before {
+  position: absolute;
+  width: 1200px;
+  height: 57px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/divider.svg);
   }
-
 
 /* Статья-описание Седоны */
 
@@ -497,7 +502,7 @@ body {
   padding-bottom: 104px;
  }
 
- .email.field  {
+ .email  {
   flex-grow: 1;
   padding: 12px 20px;
   font-size: 18px;
@@ -687,6 +692,7 @@ body {
 
 .catalog-filter {
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 70px;
 }
 
@@ -828,7 +834,6 @@ body {
 .rangle-toggle:focus {
   outline: 3px solid #68A2CA;
   border: none;
-  border-right: 3px solid #68A2CA;
 }
 
 /* Не работает */
@@ -920,7 +925,7 @@ body {
 .catalog-result-search-view {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .catalog-found {
@@ -928,6 +933,7 @@ body {
   align-self: center;
   min-width: 338px;
   margin: 0;
+  margin-bottom: 8px;
   text-transform: uppercase;
 }
 
@@ -936,6 +942,7 @@ body {
   margin-left: auto;
   padding: 12px 20px;
   padding-right: 40px;
+  margin-bottom: 8px;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -972,7 +979,6 @@ body {
 .buttons-view {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   width: 160px;
   margin: 0;
@@ -981,14 +987,20 @@ body {
   list-style-type: none;
 }
 
+.button-item:not(:nth-child(3n)) {
+  margin-right: 8px;
+}
+
 .button-view {
   display: block;
   min-width: 16px;
   min-height: 16px;
   padding: 14px;
+  margin-bottom: 8px;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
 }
+
 .button-view:hover {
   border-color: #000000;
 }
@@ -1139,6 +1151,7 @@ body {
   min-width: 60px;
   min-height: 60px;
   margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .pagination-link,
@@ -1454,7 +1467,6 @@ body {
   font-size: 18px;
   line-height: 20px;
   text-align: center;
-  fill: rgba(233, 245, 5, 0.966);
 }
 
 
