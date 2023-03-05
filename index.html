@@ -135,7 +135,7 @@
             <p class="subscribe-text headline">Только полезная информация и никакого спама,<br> честное бойскаутское</p>
           </div>
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-              <input class="email field" type="email" name="email" placeholder="Ваш e-mail">
+              <input class="email" type="email" name="email" placeholder="Ваш e-mail">
               <button class="button button-big button-add-color button-subscribe" type="submit">подписаться</button>
             </form>
 
@@ -190,26 +190,29 @@
         <form class="search-modal-form" action="https://echo.htmlacademy.ru/" method="post">
           <label class="label-field" for="field-entry">Дата Заезда:</label>
           <input class="field-date" id="field-entry" type="text" placeholder="Укажите дату">
-          <span class="date-text error">Мы не можем отправить вас в прошлое.</span>
+
+
+          <span class="error">Мы не можем отправить вас в прошлое.</span>
+          <span class="visually-hidden date-text">На эти даты есть свободные номера. Пока есть.</span>
+
 
           <label class="label-field" for="field-exit">Дата Выезда:</label>
           <input class="field-date" id="field-exit" type="text" placeholder="Укажите дату">
           <span class="date-text">На эти даты есть свободные номера. Пока есть.</span>
           <label class="label-field" for="grown-amount">Взрослые:</label>
 
-          <div class="buttons-modal grown">
-            <button class="button-minus button-amount" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="2" viewBox="0 0 14 2" ><path d="M0 0v2h14V0H0Z"/></svg>
+          <div class="buttons-modal">
+            <button class="button-amount" type="button">
+              <span class="visually-hidden">Уменьшает количество</span>
             </button>
             <input class="grown-amount amount" id="grown-amount" type="number" name="grown-amount" value="2">
             <button class="button-plus button-amount" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z"/></svg>
+              <span class="visually-hidden">Прибавляет количество</span>
             </button>
           </div>
 
           <!-- Тоолтип -->
 
-          <span class="form-label">
             <label class="label-info-babies" for="babies-amount">
               <span class="justify">Дети:</span>
               <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
@@ -220,17 +223,16 @@
                 Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
               </span>
             </label>
-          </span>
 
           <!-- Тоолтип - конец -->
 
-          <div class="buttons-modal babies">
-            <button class="button-minus button-amount" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="2" viewBox="0 0 14 2"><path d="M0 0v2h14V0H0Z"/></svg>
+          <div class="buttons-modal">
+            <button class="button-amount" type="button">
+              <span class="visually-hidden">Уменьшает количество</span>
             </button>
             <input class="babies-amount amount" id="babies-amount" type="number" name="babies-amount" value="2">
             <button class="button-plus button-amount" type="button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><path d="M14 6H8V0H6v6H0v2h6v6h2V8h6V6Z"/></svg>
+              <span class="visually-hidden">Прибавляет количество</span>
             </button>
           </div>
 
