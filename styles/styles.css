@@ -177,6 +177,32 @@ body {
   margin: auto;
 }
 
+.navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  margin: 0;
+  padding: 8px 0;
+  list-style-type: none;
+}
+
+.navigation-item {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-link:not(.button) {
+  display: block;
+  padding: 11px 14px;
+  border: 2px solid transparent;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+  color: #000000;
+}
+
 .logo {
   width: 112px;
   margin-right: 30px;
@@ -198,40 +224,15 @@ body {
   opacity: 30%;
 }
 
-.navigation-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 450px;
-  margin: 0;
-  padding: 8px 0;
-  list-style-type: none;
-}
-
-.navigation-item {
-  padding: 0;
-  margin: 0;
-}
-
-.navigation-link:not(.button) {
-  display: block;
-  padding: 10px 14px;
-  border: 2px solid transparent;
-
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  text-decoration: none;
-  color: #000000;
-}
-
 .navigation-current {
   position: relative;
 }
+
 .navigation-current::before {
   content: "";
   position: absolute;
   width: calc(100% - 32px);
-  bottom: -12px;
+  bottom: -10px;
   border-bottom: 2px solid #756257;
   z-index: 1;
 }
@@ -247,7 +248,7 @@ body {
 
 .navigation-user .navigation-link {
   min-width: 20px;
-  padding: 22px 12px;
+  padding: 22px 11px;
 }
 
 .navigation-search {
@@ -278,7 +279,7 @@ body {
 /* Общие правила интерактивности ссылок для шапки и подвала */
 
 .navigation-link[href]:not(.button):hover,
-.navigation-link:not(.button):focus,
+.navigation-link[href]:not(.button):focus,
 .tel:hover,
 .tel:focus {
   color: #756157;
@@ -338,25 +339,27 @@ body {
 .description-text.heading {
   margin-bottom: 25px;
 }
-
+/* Переписала с флексов на гриды, чтобы красиво обтекало - разницы никакой */
 .description-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, auto);
 
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
-
 .description-item {
   display: flex;
-  flex-wrap: wrap;
-  max-height: 385px;
-  box-sizing: content-box;
-  background-color: #82B3D3;
+ flex-wrap: wrap;
+ box-sizing: content-box;
+ background-color: #82B3D3;
 }
 
+.description-town,
+.description-bridge {
+  grid-column: span 3;
+}
 
 .description-item img {
   display: block;
@@ -370,7 +373,7 @@ body {
 .item-text {
   width: 230px;
   min-height: 200px;
-  padding: 112px 85px;
+  padding: 112px 85px 73px 85px;
 }
 .description-title {
   padding-bottom: 30px;
@@ -470,7 +473,7 @@ body {
   display: block;
   width: 376px;
   margin: auto;
-  margin-top: 54px;
+  margin-top: 53px;
   /* отодвинула кнопку сверху, чтобы текст шел непрерывным потоком без "дырок" между параграфами */
   padding: 8px 50px;
 }
@@ -490,7 +493,7 @@ body {
  .subscribe-wrapper {
   width: 800px;
   margin: auto;
-  padding-top: 96px;
+  padding-top: 91px;
   margin-bottom: 54px;
  }
 
@@ -936,7 +939,6 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
   align-self: center;
   min-width: 338px;
   margin: 0;
-  margin-bottom: 8px;
   text-transform: uppercase;
 }
 
@@ -945,7 +947,6 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
   margin-left: auto;
   padding: 12px 20px;
   padding-right: 40px;
-  margin-bottom: 8px;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -990,15 +991,15 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
 }
 
 .button-item:not(:nth-child(3n)) {
-  margin-right: 8px;
+  margin-right: 7px;
 }
 
 .button-view {
   display: block;
-  min-width: 16px;
+  min-width: 14px;
   min-height: 16px;
-  padding: 14px;
-  margin-bottom: 8px;
+  padding: 16px 16px;
+  margin-bottom: 6px;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
 }
@@ -1150,8 +1151,7 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
 }
 
 .pagination-item {
-  min-width: 60px;
-  min-height: 60px;
+  width: 60px;
   margin-right: 8px;
   margin-bottom: 8px;
 }
@@ -1283,7 +1283,6 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
 .label-info-babies {
   display: grid;
   grid-template-columns: auto 73px;
-  grid-template-rows: 48px;
   align-items: center;
   font-size: 20px;
   line-height: 24px;
@@ -1490,6 +1489,8 @@ box-shadow: inset 0 0 1px 3px #68A2CA;
   border-radius: 10px;
   background-color: #83B3D3;
 }
+
+
 
 .modal-container-close {
   display: none;
