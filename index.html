@@ -9,8 +9,8 @@
     <div class="page-container">
       <header class="page-header" data-test="header">
         <nav class="navigation">
-          <a class="logo">
-            <img  src="images/logo-sedona.svg" width="140" height="70"  alt="Логотип сайта Седона.">
+          <a class="logo navigation-link">
+            <img class="logo-img" src="images/logo-sedona.svg" width="140" height="70"  alt="Логотип сайта Седона.">
           </a>
           <ul class="navigation-list">
             <li class="navigaton-item">
@@ -56,7 +56,6 @@
             заслуживающий большего!</p>
             <p class="description-text headline">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </div>
-
           <ol class="description-list">
             <li class="description-item description-town">
               <div class="item-text">
@@ -131,14 +130,13 @@
         </section>
 
         <section class="subscribe" data-test="subscribe">
-          <!-- После рестроспективы добавила обертку к тексту -->
           <div class="subscribe-wrapper">
             <h2 class="subscribe-title heading">Подпишитесь на рассылку</h2>
             <p class="subscribe-text headline">Только полезная информация и никакого спама,<br> честное бойскаутское</p>
           </div>
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-              <input class="email font-family" type="email" name="email" placeholder="Ваш e-mail">
-              <button class="button button-big button-add-color button-subscribe font-family" type="submit">подписаться</button>
+              <input class="email" type="email" name="email" placeholder="Ваш e-mail">
+              <button class="button button-big button-add-color button-subscribe" type="submit">подписаться</button>
             </form>
 
 
@@ -179,6 +177,72 @@
 
         </div>
       </footer>
+  </div>
+
+  <!-- Модальное окно -->
+  <div class="modal-container modal-container-close">
+    <div class="modal-search">
+      <button class="modal-close-button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+      <section class="modal-content">
+        <h2 class="modal-title heading">Поиск гостиницы в Седоне</h2>
+        <form class="search-modal-form" action="https://echo.htmlacademy.ru/" method="post">
+          <label class="label-field" for="field-entry">Дата Заезда:</label>
+          <input class="field-date" id="field-entry" type="text" placeholder="Укажите дату">
+
+
+          <span class="error">Мы не можем отправить вас в прошлое.</span>
+          <span class="visually-hidden date-text">На эти даты есть свободные номера. Пока есть.</span>
+
+
+          <label class="label-field" for="field-exit">Дата Выезда:</label>
+          <input class="field-date" id="field-exit" type="text" placeholder="Укажите дату">
+          <span class="date-text">На эти даты есть свободные номера. Пока есть.</span>
+          <label class="label-field" for="grown-amount">Взрослые:</label>
+
+          <div class="buttons-modal">
+            <button class="button-amount" type="button">
+              <span class="visually-hidden">Уменьшает количество</span>
+            </button>
+            <input class="grown-amount amount" id="grown-amount" type="number" name="grown-amount" value="2">
+            <button class="button-plus button-amount" type="button">
+              <span class="visually-hidden">Прибавляет количество</span>
+            </button>
+          </div>
+
+          <!-- Тоолтип -->
+
+            <label class="label-info-babies" for="babies-amount">
+              <span class="justify">Дети:</span>
+              <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none" viewBox="0 0 2 12"><path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd"/></svg>
+              </button>
+
+              <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
+                Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+              </span>
+            </label>
+
+          <!-- Тоолтип - конец -->
+
+          <div class="buttons-modal">
+            <button class="button-amount" type="button">
+              <span class="visually-hidden">Уменьшает количество</span>
+            </button>
+            <input class="babies-amount amount" id="babies-amount" type="number" name="babies-amount" value="2">
+            <button class="button-plus button-amount" type="button">
+              <span class="visually-hidden">Прибавляет количество</span>
+            </button>
+          </div>
+
+          <button type="submit" class="button button-add-color button-modal">Найти</button>
+        </form>
+
+      </section>
+
+
+    </div>
   </div>
   </body>
 </html>

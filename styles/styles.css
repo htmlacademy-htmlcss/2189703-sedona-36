@@ -18,35 +18,31 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   height: 100%;
   background-color: #F2F2F2;
 }
+
 body {
   margin: 0 auto;
-  width: 1280px;
+  min-width: 1280px;
   height: 100%;
-
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
-
   color: #333333;
 }
-/* Переназначаю браузерные стили на теги кнопок и форм */
-.font-family {
-  font-family: "PT Sans", sans-serif;
-}
-
 /* Sticky footer (липкий футер) и нормализация стилей*/
 
 .page-container {
+  position: relative;
   min-height: 100%;
   display: flex;
   flex-direction: column;
 
   /* Стакан */
-
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   width: 1200px;
   margin: auto;
   text-align: center;
@@ -59,12 +55,13 @@ body {
   flex-grow: 1;
 }
 
-/* Общие правила для кнопок, будут меняться */
+/* Общие правила для кнопок */
 
 .button {
   display: inline-block;
   box-sizing: border-box;
   min-width: 140px;
+  font-family: inherit;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
@@ -82,26 +79,33 @@ body {
 .button:hover {
   background-color: #615048;
 }
+
 .button:focus {
   background-color: #615048;
 }
+
 .button:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #756157;
 }
+
 .button:disabled {
   background-color: #E5E5E5;
+  cursor: default;
 }
 
 .button-add-color {
   background-color: #82B3D3;
 }
+
 .button-add-color:hover {
   background-color: #68A2CA;
 }
+
 .button-add-color:focus {
   background-color: #68A2CA;
 }
+
 .button-add-color:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82B3D3;
@@ -109,6 +113,7 @@ body {
 
 .button-add-color:disabled {
   background-color: #E5E5E5;
+  cursor: default;
 }
 
 .button-big {
@@ -158,8 +163,6 @@ body {
   overflow: hidden;
 }
 
-
-
 /* Шапка сайта */
 
 .page-header {
@@ -174,31 +177,24 @@ body {
   margin: auto;
 }
 
-.logo {
-  position: relative;
-  width: 140px;
-  margin-right: 30px;
-}
-
-.logo img {
-  position: absolute;
-  left: 0;
-  z-index: 1;
-}
-
 .navigation-list {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
-
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
   list-style-type: none;
+}
+
+.navigation-item {
+  padding: 0;
+  margin: 0;
 }
 
 .navigation-link:not(.button) {
   display: block;
-  padding: 20px 16px;
+  padding: 11px 14px;
+  border: 2px solid transparent;
 
   font-weight: 700;
   font-size: 20px;
@@ -206,14 +202,37 @@ body {
   text-decoration: none;
   color: #000000;
 }
+
+.logo {
+  width: 112px;
+  margin-right: 30px;
+}
+
+.logo-img {
+  position: absolute;
+  top: 0;
+  left: 70px;
+  z-index: 1;
+}
+
+.logo[href]:hover .logo-img,
+.logo[href]:focus .logo-img {
+  opacity: 60%;
+}
+
+.logo[href]:active .logo-img {
+  opacity: 30%;
+}
+
 .navigation-current {
   position: relative;
 }
+
 .navigation-current::before {
   content: "";
   position: absolute;
   width: calc(100% - 32px);
-  bottom: 0;
+  bottom: -10px;
   border-bottom: 2px solid #756257;
   z-index: 1;
 }
@@ -229,7 +248,7 @@ body {
 
 .navigation-user .navigation-link {
   min-width: 20px;
-  padding: 22px 12px;
+  padding: 22px 11px;
 }
 
 .navigation-search {
@@ -257,11 +276,34 @@ body {
   border-radius: 50%;
 }
 
+/* Общие правила интерактивности ссылок для шапки и подвала */
+
+.navigation-link[href]:not(.button):hover,
+.navigation-link[href]:not(.button):focus,
+.tel:hover,
+.tel:focus {
+  color: #756157;
+}
+
+.navigation-link[href]:not(.button):active,
+.tel:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
+.navigation-user .navigation-link:not(.button):hover,
+.navigation-user .navigation-link:not(.button):focus {
+  opacity: 60%;
+}
+
+.navigation-user .navigation-link:not(.button):active {
+  opacity: 30%;
+}
+
 .navigation-link.button {
   display: block;
   min-width: 160px;
   padding: 8px 32px;
-  margin: 14px 0 14px 20px;
+  margin: 6px 0 6px 20px;
   font-size: 16px;
   line-height: 20px;
 }
@@ -275,16 +317,15 @@ body {
   background-size: cover;
   }
 
-  .hero::before {
-    position: absolute;
-    width: 1200px;
-    height: 57px;
-    content: "";
-    bottom: 0;
-    left: 0;
-    background-image: url(../images/divider.svg);
+.hero::before {
+  position: absolute;
+  width: 1200px;
+  height: 57px;
+  content: "";
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/divider.svg);
   }
-
 
 /* Статья-описание Седоны */
 
@@ -298,25 +339,27 @@ body {
 .description-text.heading {
   margin-bottom: 25px;
 }
-
+/* Переписала с флексов на гриды, чтобы красиво обтекало - разницы никакой */
 .description-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, auto);
 
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
-
 .description-item {
   display: flex;
-  flex-wrap: wrap;
-  max-height: 385px;
-  box-sizing: content-box;
-  background-color: #82B3D3;
+ flex-wrap: wrap;
+ box-sizing: content-box;
+ background-color: #82B3D3;
 }
 
+.description-town,
+.description-bridge {
+  grid-column: span 3;
+}
 
 .description-item img {
   display: block;
@@ -330,7 +373,7 @@ body {
 .item-text {
   width: 230px;
   min-height: 200px;
-  padding: 112px 85px;
+  padding: 112px 85px 73px 85px;
 }
 .description-title {
   padding-bottom: 30px;
@@ -430,7 +473,7 @@ body {
   display: block;
   width: 376px;
   margin: auto;
-  margin-top: 54px;
+  margin-top: 53px;
   /* отодвинула кнопку сверху, чтобы текст шел непрерывным потоком без "дырок" между параграфами */
   padding: 8px 50px;
 }
@@ -450,9 +493,8 @@ body {
  .subscribe-wrapper {
   width: 800px;
   margin: auto;
-  padding-top: 96px;
+  padding-top: 91px;
   margin-bottom: 54px;
-  /* Отталкивает форму подписки */
  }
 
  .subscribe-form {
@@ -465,7 +507,9 @@ body {
  .email  {
   flex-grow: 1;
   padding: 12px 20px;
+  font-family: inherit;
   font-size: 18px;
+  font-weight: 700;
   line-height: 24px;
   color: #000000;
   background-color: #F2F2F2;
@@ -543,14 +587,6 @@ body {
   line-height: 40px;
   text-decoration: none;
   color: #000000;
-}
-
-.tel:hover,
-.tel:focus {
-  color: #756157;
-}
-.tel:active {
-  color: rgba(117, 97, 87, 0.3);
 }
 
 .academy-icon {
@@ -660,7 +696,21 @@ body {
 
 .catalog-filter {
   display: flex;
+  flex-wrap: wrap;
   padding-bottom: 70px;
+}
+
+.catalog-filter-group {
+  min-width: 150px;
+  margin: 0;
+  padding: 0;
+  margin-right: 70px;
+  border: none;
+}
+
+.catalog-filter-cost {
+  min-width: 288px;
+  margin-left: auto;
 }
 
 .catalog-filter-title {
@@ -673,38 +723,171 @@ body {
 .catalog-filter-list {
   font-size: 18px;
   line-height: 23px;
-}
-
-.catalog-filter-group {
-min-width: 150px;
-margin-right: 70px;
-border: none;
-
- outline: 5px solid rgb(240, 49, 11);
-  outline-offset: -5px;
-}
-
-.catalog-filter-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.catalog-filter-cost {
-  min-width: 288px;
-  margin-left: auto;
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
+}
 
-   outline: 5px solid rgb(69, 73, 10);
-  outline-offset: -5px;
+/* Чекбоксы  */
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+.control-mark {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  left: 0;
+}
+.control:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+.control:hover .control-mark {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.control:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+.control:active + .control-mark {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control:active .control-input[type="checkbox"]:checked + .control-mark {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.control-input:focus + .control-mark {
+  outline: 3px solid #83B3D3;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  background: #ffffff url(../images/icons/check.svg) center no-repeat;
+}
+
+/* радио-кнопки */
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3F5E72;
+  top: 5px;
+  left: 5px;
+}
+
+/* блок стоимости */
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: space-between;
+  width: 288px;
+  margin-bottom: 42px;
+  border-radius: 4px;
+}
+
+.range-label {
+  position: relative;
+}
+
+.range-input {
+  width: 103px;
+  height: 24px;
+  padding: 12px 20px;
+  font: inherit;
+  font-weight: 700;
+  color: #000000;
+  background-color: #F2F2F2;
+  border: none;
+  appearance: textfield;
+}
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.range-input-till {
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.range-input-next {
+  border-radius: 4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* Текст введён,  курсор внутри поля - НЕ ПОЛУЧАЕТСЯ!!!*/
+.range-input:active {
+  outline: 3px solid #000000;
+}
+
+/* С outline - скачет, потому что второй инпут перекрывает первый, а тень некрасивая
+box-shadow: inset 0 0 1px 3px #68A2CA;
+  outline: none;
+  на баре в стайлгайде на маленьких кнопках видно, что
+  это не тень, а outline...
+*/
+
+.range-input:focus,
+.rangle-toggle:focus {
+  outline: 3px solid #83b3d3;
+}
+
+.rangle-toggle:active {
+  outline: 2px solid #83b3d3;
+}
+
+.input-text {
+  position: absolute;
+  right: 20px;
+  line-height: 24px;
+  top: 12px;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.rangle-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: -8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.toggle-max {
+  left: 206px;
 }
 
 .catalog-filter-buttons {
   align-self: flex-end;
-  min-width: 191px;
+  width: 191px;
   margin-right: 0;
-
-   outline: 1px solid rgb(106, 39, 206);
-  outline-offset: -1px;
 }
 
 .button-apply {
@@ -737,6 +920,7 @@ border: none;
 .button-reset:disabled {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.3);
+  cursor: default;
 }
 
 /* Секция результатов фильтра */
@@ -747,7 +931,7 @@ border: none;
 .catalog-result-search-view {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .catalog-found {
@@ -758,41 +942,46 @@ border: none;
   text-transform: uppercase;
 }
 
-/* Не отодвигается стрелочка от правого края селекта */
 .select-control {
   width: 292px;
   margin-left: auto;
-  padding: 14px 20px;
+  padding: 12px 20px;
+  padding-right: 40px;
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
   color: #333333;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
   appearance: none;
+  background: #ffffff url(../images/icons/arrow-y.svg) right 20px center no-repeat;
   }
 
-  /* В стайлгайде нет ничего про
-  этот элемент - видимо я перепутала с формами
-.select-control:hover {
-  box-shadow: inset 0 0 0 2px #68A2CA;
-  outline: none;
+.select-control:hover,
+.field:hover {
+  border-color: #68A2CA;
 }
-.select-control:focus {
-  box-shadow: inset 0 0 0 2px #68A2CA;
-  outline: none;
+.select-control:focus,
+.field:focus {
+  border-color: #68A2CA;
 }
-.select-control:active {
+
+.select-control:active,
+.field:active {
+ background-color: #ffffff;
  border-color: #3F5E72;
 }
-.select-control:disabled {
+
+.select-control:disabled,
+.field:disabled {
   color: rgba(0, 0, 0, 0.3);
-  outline: 2px solid rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 0, 0, 0.3);
+  cursor: default;
 }
-*/
+
 .buttons-view {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   width: 160px;
   margin: 0;
@@ -801,27 +990,33 @@ border: none;
   list-style-type: none;
 }
 
+.button-item:not(:nth-child(3n)) {
+  margin-right: 7px;
+}
+
 .button-view {
   display: block;
-  min-width: 16px;
-  min-height: 14px;
-  padding: 16px;
-  box-shadow: inset 0 0 0 2px #E5E5E5;
+  min-width: 14px;
+  min-height: 16px;
+  padding: 16px 16px;
+  margin-bottom: 6px;
+  border: 2px solid #E5E5E5;
   border-radius: 4px;
 }
+
 .button-view:hover {
-  box-shadow: inset 0 0 0 2px #000000;
+  border-color: #000000;
 }
 .button-view:focus {
+  border-color: #68A2CA;
   outline: none;
-  box-shadow: inset 0 0 0 2px #68A2CA;
 }
 
 .button-view:active {
-  box-shadow: inset 0 0 0 2px #000000;
+  border-color: #000000;
 }
 .button-active {
-  box-shadow: inset 0 0 0 2px #000000;
+  border-color: #000000;
 }
 .button-tile {
   background: url(../images/buttons-view/tile.svg) no-repeat center;
@@ -956,9 +1151,9 @@ border: none;
 }
 
 .pagination-item {
-  min-width: 60px;
-  min-height: 60px;
+  width: 60px;
   margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .pagination-link,
@@ -1008,4 +1203,295 @@ border: none;
 }
 .subscribe-catalog h2 {
   color: #000000;
+}
+
+
+/* Модальное окно */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 1;
+}
+
+.modal-search {
+  position: relative;
+  width: 577px;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #ffffff;
+}
+.modal-search {
+  border-radius: 30px;
+}
+/* Кнопка закрытия*/
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: #F2F2F2 url(../images/icons/close.svg) center no-repeat;
+  cursor: pointer;
+}
+.modal-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+.modal-close-button:active {
+  background-color: #E6E6E6;
+  opacity: 30%;
+  outline: none;
+}
+
+.modal-title {
+  margin-bottom: 64px;
+}
+
+.search-modal-form {
+  display: grid;
+  width: 577px;
+  grid-template-columns: 137px 110px 1fr 110px;
+}
+
+.label-field {
+  display: flex;
+  margin-bottom: 4px;
+  align-items: center;
+  grid-column: 1/2;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+}
+
+/*   Тултип    */
+
+.label-info-babies {
+  display: grid;
+  grid-template-columns: auto 73px;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  position: relative;
+}
+
+.justify {
+  justify-self: end;
+  padding-right: 11px;
+}
+
+.tooltip-toggle {
+  grid-column: 2/3;
+  width: 26px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.tooltip-icon {
+  width: 2px;
+  height: 12px;
+  padding: 7px 12px;
+  border-radius: 50%;
+  background-color: #83B3D3;
+}
+
+.tooltip-toggle:hover .tooltip-icon {
+  cursor: pointer;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: 52px;
+  left: 32px;
+  background-color: #333333;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px 18px 14px 22px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  width: 216px;
+  height: 110px;
+  display: none;
+}
+
+.tooltip-text::before {
+  content: "";
+  width: 19px;
+  height: 9px;
+  background: url(../images/icons/tooltip.svg) center no-repeat;
+  top: -9px;
+  left: 120px;
+  position: absolute;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+
+.field-date {
+  display: block;
+  grid-column: 2/-1;
+  position: relative;
+  padding: 12px 20px;
+  margin-bottom: 4px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+  background: #F2F2F2 url(../images/icons/date.svg) center right 20px no-repeat;
+  border: none;
+  border-radius: 4px;
+}
+.field-date:placeholder-shown {
+  opacity: 60%;
+}
+
+
+
+.field-date:hover {
+  background-color: #E6E6E6;
+}
+.field-date:focus {
+  background-color: #E6E6E6;
+
+  outline: 3px solid #83B3D3;
+  border: none;
+}
+/* НЕ РАБОТАЕТ Текст введён,  курсор внутри поля */
+
+.field-date:active {
+  outline: 3px solid #000000;
+}
+
+.field-date:disabled {
+  background-color: #E5E5E5;
+  opacity: 30%;
+  cursor: default;
+}
+
+.date-text {
+  display: block;
+  padding: 0 20px;
+  margin-bottom: 23px;
+  grid-column: 2/-1;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+
+.error {
+  display: block;
+  padding: 0 20px;
+  margin-bottom: 23px;
+  grid-column: 2/-1;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FF5757;
+}
+/* Кнопки */
+
+.babies-amount::-webkit-outer-spin-button,
+.babies-amount::-webkit-inner-spin-button,
+.grown-amount::-webkit-outer-spin-button,
+.grown-amount::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.buttons-modal {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 110px;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+}
+
+.button-amount {
+  display: block;
+  box-sizing: border-box;
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  background: url(../images/icons/minus.svg) center no-repeat;
+  opacity: 30%;
+  margin: 5px;
+}
+
+.button-plus {
+  background: url(../images/icons/plus.svg) center no-repeat;
+}
+
+
+
+.button-amount:hover {
+  opacity: 100%;
+}
+
+.button-amount:focus {
+  opacity: 100%;
+  outline: 3px solid #82B3D3;
+}
+
+.button-amount:active {
+  opacity: 20%;
+}
+
+/* Не работает переполнение - 20 детей уже никуда не поедет */
+
+.amount {
+  box-sizing: border-box;
+  max-width: 30px;
+  height: 48px;
+  background-color: #F2F2F2;
+  border: none;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+}
+
+
+
+.button-modal {
+  grid-column: 1/-1;
+  padding: 18px;
+  margin-top: 48px;
+  border: none;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 10px;
+  background-color: #83B3D3;
+}
+
+
+
+.modal-container-close {
+  display: none;
 }
