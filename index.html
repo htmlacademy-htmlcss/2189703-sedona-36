@@ -190,6 +190,7 @@
       <section class="modal-content">
         <h2 class="modal-title heading">Поиск гостиницы в Седоне</h2>
         <form class="search-modal-form" action="https://echo.htmlacademy.ru/" method="post">
+
           <label class="label-field" for="field-entry">Дата Заезда:</label>
           <input class="field-date" id="field-entry" type="text" name="entry" placeholder="Укажите дату">
           <span class="date-text error">Мы не можем отправить вас в прошлое.</span>
@@ -210,7 +211,16 @@
             </button>
           </div>
 
-          <label class="label-info-babies" for="babies-amount">Дети:</label>
+          <div class="tooltip">
+            <label class="label-info-babies" for="babies-amount">Дети:</label>
+            <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+              <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none" viewBox="0 0 2 12"><path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd"/></svg>
+            </button>
+
+            <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
+              Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+            </span>
+          </div>
 
           <div class="buttons-modal">
             <button class="button-amount" type="button">
@@ -225,16 +235,6 @@
           <button type="submit" class="button button-add-color button-modal">Найти</button>
         </form>
 
-        <!-- Тоолтип -->
-        <div class="tooltip">
-          <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
-            <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none" viewBox="0 0 2 12"><path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd"/></svg>
-          </button>
-
-          <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
-            Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
-          </span>
-        </div>
       </section>
     </div>
   </div>
