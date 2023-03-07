@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Седона-Главная</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   </head>
   <body>
     <div class="page-container">
@@ -32,7 +33,8 @@
             </li>
             <li class="navigaton-item">
               <a class="navigation-link navigation-favor" href="#">
-                <span class="visually-hidden">Избранное. Вы выбрали 12 гостиниц.</span>
+                <span class="visually-hidden">Избранное. Количество выбранных гостиниц:</span>
+                <sup class="favor">12</sup>
               </a>
             </li>
             <li class="navigaton-item">
@@ -182,23 +184,20 @@
   <!-- Модальное окно -->
   <div class="modal-container modal-container-close">
     <div class="modal-search">
-      <button class="modal-close-button">
+      <button class="modal-close-button" type="button">
         <span class="visually-hidden">Закрыть</span>
       </button>
       <section class="modal-content">
         <h2 class="modal-title heading">Поиск гостиницы в Седоне</h2>
         <form class="search-modal-form" action="https://echo.htmlacademy.ru/" method="post">
           <label class="label-field" for="field-entry">Дата Заезда:</label>
-          <input class="field-date" id="field-entry" type="text" placeholder="Укажите дату">
-
-
-          <span class="error">Мы не можем отправить вас в прошлое.</span>
-          <span class="visually-hidden date-text">На эти даты есть свободные номера. Пока есть.</span>
-
+          <input class="field-date" id="field-entry" type="text" name="entry" placeholder="Укажите дату">
+          <span class="date-text error">Мы не можем отправить вас в прошлое.</span>
 
           <label class="label-field" for="field-exit">Дата Выезда:</label>
-          <input class="field-date" id="field-exit" type="text" placeholder="Укажите дату">
+          <input class="field-date" id="field-exit" type="text" name="exit" placeholder="Укажите дату">
           <span class="date-text">На эти даты есть свободные номера. Пока есть.</span>
+
           <label class="label-field" for="grown-amount">Взрослые:</label>
 
           <div class="buttons-modal">
@@ -211,20 +210,7 @@
             </button>
           </div>
 
-          <!-- Тоолтип -->
-
-            <label class="label-info-babies" for="babies-amount">
-              <span class="justify">Дети:</span>
-              <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
-                <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none" viewBox="0 0 2 12"><path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd"/></svg>
-              </button>
-
-              <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
-                Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
-              </span>
-            </label>
-
-          <!-- Тоолтип - конец -->
+          <label class="label-info-babies" for="babies-amount">Дети:</label>
 
           <div class="buttons-modal">
             <button class="button-amount" type="button">
@@ -239,9 +225,17 @@
           <button type="submit" class="button button-add-color button-modal">Найти</button>
         </form>
 
+        <!-- Тоолтип -->
+        <div class="tooltip">
+          <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+            <svg class="tooltip-icon" xmlns="http://www.w3.org/2000/svg" width="2" height="12" fill="none" viewBox="0 0 2 12"><path fill="#fff" fill-rule="evenodd" d="M0 0h2v2H0V0Zm2 12H0V3h2v9Z" clip-rule="evenodd"/></svg>
+          </button>
+
+          <span class="tooltip-text" role="tooltip" id="tooltip-label-date">
+            Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+          </span>
+        </div>
       </section>
-
-
     </div>
   </div>
   </body>

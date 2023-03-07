@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Седона-Гостиницы</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   </head>
   <body>
     <div class="page-container">
@@ -33,7 +34,8 @@
             </li>
             <li class="navigaton-item">
               <a class="navigation-link navigation-favor" href="#">
-                <span class="visually-hidden">Избранное.</span>
+                <span class="visually-hidden">Избранное. Количество выбранных гостиниц:</span>
+                <sup class="favor">12</sup>
               </a>
             </li>
             <li class="navigaton-item">
@@ -124,12 +126,16 @@
                 <div class="range">
                   <div class="range-wrapper-inputs">
                     <label class="range-label">
-                      <input class="range-input range-input-till" type="number" value="0">
-                      <span class="input-text input-till">от</span>
+                      <input class="range-input range-input-till" type="number" placeholder="0">
+
+                        <span class="input-text">от</span>
+
                     </label>
                     <label class="range-label">
-                      <input class="range-input range-input-next" type="number" value="9000">
-                      <span class="input-text input-next">до</span>
+                      <input class="range-input range-input-next" type="number" placeholder="9000">
+
+                       <span class="input-text">до</span>
+
                     </label>
                   </div>
                   <div class="range-scale">
@@ -159,7 +165,9 @@
             <span class="catalog-found heading">Найдено гостиниц: 38</span>
 
             <select class="select-control" aria-label="Сортировка">
-              <option value="cheap">Сначала дешевые</option>
+              <option value="cheap" selected>Сначала дешевые</option>
+            <option value="popular">Сначала популярные</option>
+            <option value="chichi">Сначала фешенебельные</option>
             </select>
             <ul class="buttons-view">
               <li class="button-item">
