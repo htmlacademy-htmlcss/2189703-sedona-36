@@ -1350,6 +1350,14 @@ body {
   color: #FF5757;
 }
 
+/* Тоолтип  */
+
+.tooltip {
+  display: flex;
+  justify-content: center;
+  margin-left: 10px;
+}
+
 .label-info-babies {
   align-self: center;
   padding-left: 20px;
@@ -1357,16 +1365,10 @@ body {
   line-height: 24px;
   font-weight: 700;
   color: #000000;
-
 }
 
-/* Тоолтип  */
-
-.tooltip {
+.tooltip-babies {
   position: relative;
-  display: flex;
-  justify-content: center;
-  margin-left: 10px;
 }
 
 .tooltip-toggle {
@@ -1393,7 +1395,7 @@ body {
 .tooltip-text {
   position: absolute;
   top: 52px;
-  left: 21px;
+  left: -105px;
   background-color: #333333;
   color: #ffffff;
   margin: 0;
@@ -1476,7 +1478,8 @@ body {
 .amount {
   box-sizing: border-box;
   max-width: 30px;
-  height: 48px;
+  height: 50px;
+
   background-color: #F2F2F2;
   border: none;
   font-family: inherit;
@@ -1488,14 +1491,13 @@ body {
 .button-modal {
   grid-column: 1/-1;
   padding: 18px;
-  margin-top: 48px;
+  margin-top: 47px;
   border: none;
   font-size: 20px;
   line-height: 24px;
   border-radius: 10px;
   background-color: #83B3D3;
 }
-
 
 .modal-container-close {
   display: none;
