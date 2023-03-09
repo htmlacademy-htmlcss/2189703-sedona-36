@@ -47,7 +47,7 @@
       </header>
 
       <main class="main-inner main-container" data-test="main">
-        <div class="wrapper">
+        <div class="title-filter-wrapper">
           <header class="header-inner">
             <h1 class="inner-header-title">Гостиницы Седоны</h1>
             <ul class="breadcrumbs-list">
@@ -128,29 +128,24 @@
                   <div class="range-wrapper-inputs">
                     <label class="range-label">
                       <input class="range-input range-input-till" type="number" placeholder="0">
-
-                        <span class="input-text">от</span>
-
+                      <span class="input-text">от</span>
                     </label>
                     <label class="range-label">
                       <input class="range-input range-input-next" type="number" placeholder="9000">
-
-                       <span class="input-text">до</span>
-
+                      <span class="input-text">до</span>
                     </label>
                   </div>
                   <div class="range-scale">
                     <div class="range-bar" style="width: 226px; left: 0">
                       <button class="rangle-toggle toggle-min" type="button">
-                        <span class="visually-hidden">Изменить минимальную цену</span>
+                      <span class="visually-hidden">Изменить минимальную цену</span>
                       </button>
                       <button class="rangle-toggle toggle-max" type="button">
-                        <span class="visually-hidden">Изменить максимальную цену</span>
+                      <span class="visually-hidden">Изменить максимальную цену</span>
                       </button>
                     </div>
                   </div>
                 </div>
-
               </fieldset>
               <div class="catalog-filter-buttons buttons">
                 <button class="button button-apply button-add-color" type="submit">Применить</button>
@@ -170,6 +165,7 @@
             <option value="popular">Сначала популярные</option>
             <option value="chichi">Сначала фешенебельные</option>
             </select>
+
             <ul class="buttons-view">
               <li class="button-item">
                 <a class="button-view button-tile button-active" href="#">
@@ -188,6 +184,7 @@
               </li>
             </ul>
           </div>
+
           <ul class="catalog-hotels" data-test="catalog">
             <li class="catalog-hotel">
               <a class="hotel-link" href="#">
@@ -245,6 +242,7 @@
               <p class="hotel-raiting">Рейтинг: 5,0</p>
             </li>
           </ul>
+
           <ol class="pagination-list">
             <li class="pagination-item">
               <a class="pagination-link pagination-current">1</a>
