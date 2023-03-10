@@ -137,7 +137,8 @@
             <p class="subscribe-text headline">Только полезная информация и никакого спама,<br> честное бойскаутское</p>
           </div>
             <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-              <input class="email" type="email" name="email" placeholder="Ваш e-mail">
+              <label class="visually-hidden" for="email">Email</label>
+              <input class="email" type="email" name="email" id="email" placeholder="Ваш e-mail" required>
               <button class="button button-big button-add-color button-subscribe" type="submit">подписаться</button>
             </form>
         </section>
@@ -189,11 +190,11 @@
           <form class="search-modal-form" action="https://echo.htmlacademy.ru/" method="post">
 
             <label class="label-field" for="field-entry">Дата Заезда:</label>
-            <input class="field-date" id="field-entry" type="text" name="entry" placeholder="Укажите дату">
+            <input class="field-date" id="field-entry" type="text" name="entry" placeholder="Укажите дату" required>
             <span class="date-text error">Мы не можем отправить вас в прошлое.</span>
 
             <label class="label-field" for="field-exit">Дата Выезда:</label>
-            <input class="field-date" id="field-exit" type="text" name="exit" placeholder="Укажите дату">
+            <input class="field-date" id="field-exit" type="text" name="exit" placeholder="Укажите дату" required>
             <span class="date-text">На эти даты есть свободные номера. Пока есть.</span>
 
             <label class="label-field" for="grown-amount">Взрослые:</label>
