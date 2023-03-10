@@ -1055,6 +1055,10 @@ fill: rgba(255, 255, 255, 0.6);
   background: url(../images/buttons-view/list.svg) no-repeat center;
 }
 
+.button-active {
+  border-color: #000000;
+}
+
 /* Список отфильтрованных отелей */
 
 .catalog-hotels {
