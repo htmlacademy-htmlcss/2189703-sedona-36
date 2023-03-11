@@ -1020,6 +1020,8 @@ fill: rgba(255, 255, 255, 0.6);
   margin-right: 7px;
 }
 
+/* Изменила ссылки на кнопки по указанию проверяющего. */
+
 .button-view {
   display: block;
   min-width: 48px;
