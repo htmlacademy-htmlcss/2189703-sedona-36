@@ -167,17 +167,17 @@
 
             <ul class="buttons-view">
               <li class="button-item">
-                <a class="button-view button-tile button-active" href="#">
+                <button class="button-view button-tile button-active" type="button">
                   <span class="visually-hidden">Показать плитку.</span>
-                </a>
+                </button>
               </li>
               <li class="button-item">
-                <a class="button-view button-slide" href="#">
+                <button class="button-view button-slide" type="button">
                   <span class="visually-hidden">Показать слайд-шоу.</span>
                 </a>
               </li>
               <li class="button-item">
-                <a class="button-view button-list" href="#">
+                <button class="button-view button-list" type="button">
                   <span class="visually-hidden">Показать список.</span>
                 </a>
               </li>
@@ -273,7 +273,8 @@
           </div>
 
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input class="email" type="email" name="email" placeholder="Ваш e-mail">
+            <label class="visually-hidden" for="email">Email</label>
+            <input class="email" type="email" name="email" id="email" placeholder="Ваш e-mail" required>
             <button class="button button-big button-add-color button-subscribe" type="submit">подписаться</button>
           </form>
 
